@@ -4,13 +4,9 @@ import { PROFILE } from "@/data/portfolio";
 const contactLinks = [
   { label: "Email", icon: "✉️", value: "muhammadfaraz991@gmail.com", href: "mailto:muhammadfaraz991@gmail.com" },
   { label: "Phone / WhatsApp", icon: "📱", value: "+92 312 854 2140", href: "https://wa.me/923128542140" },
-  { label: "LinkedIn", icon: "💼", value: "muhammad-faraz", href: "https://linkedin.com/in/muhammad-faraz" },
-  { label: "GitHub", icon: "💻", value: "mfarazgt", href: "https://github.com/mfarazgt" },
-];
-
-const freelancePlatforms = [
-  { label: "Fiverr", icon: "🟢", color: "#1dbf73", href: PROFILE.fiverr },
-  { label: "Upwork", icon: "🔵", color: "#14a800", href: PROFILE.upwork },
+  { label: "LinkedIn", icon: "💼", value: "muhammad-faraz", href: PROFILE.linkedin },
+  { label: "GitHub (Work)", icon: "💻", value: "mfarazgt", href: PROFILE.githubWork },
+  { label: "GitHub (Personal)", icon: "💻", value: "MuFaraz", href: PROFILE.githubPersonal },
 ];
 
 export default function Contact() {
@@ -64,41 +60,6 @@ export default function Contact() {
                 </div>
               </a>
             ))}
-
-            {/* Freelance platforms */}
-            <div
-              className="rounded-xl p-4"
-              style={{ background: "var(--card)", border: "1px solid var(--border)" }}
-            >
-              <p className="text-xs mb-3" style={{ color: "var(--muted)" }}>
-                Find me on freelance platforms
-              </p>
-              <div className="flex gap-3">
-                {freelancePlatforms.map((p) => (
-                  <a
-                    key={p.label}
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
-                    style={{
-                      border: "1px solid var(--border)",
-                      color: "var(--text)",
-                      textDecoration: "none",
-                      background: "var(--bg3)",
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.borderColor = p.color;
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.borderColor = "var(--border)";
-                    }}
-                  >
-                    {p.icon} {p.label}
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right — Contact form (mailto based) */}

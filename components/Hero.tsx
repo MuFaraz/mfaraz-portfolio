@@ -86,9 +86,7 @@ export default function Hero() {
                 View My Work →
               </a>
               <a
-                href={PROFILE.fiverr}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200"
                 style={{
                   background: "transparent",
@@ -104,36 +102,16 @@ export default function Hero() {
                   (e.currentTarget as HTMLElement).style.color = "var(--text)";
                 }}
               >
-                Fiverr Profile ↗
-              </a>
-              <a
-                href="#contact"
-                className="px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200"
-                style={{
-                  background: "transparent",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                  color: "var(--text)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "var(--accent2)";
-                  (e.currentTarget as HTMLElement).style.color = "var(--accent2)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.12)";
-                  (e.currentTarget as HTMLElement).style.color = "var(--text)";
-                }}
-              >
-                Let&apos;s Talk
+                Get In Touch
               </a>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-8">
               {[
-                { href: PROFILE.github, label: "GitHub" },
+                { href: PROFILE.githubWork, label: "GitHub (Work)" },
+                { href: PROFILE.githubPersonal, label: "GitHub (Personal)" },
                 { href: PROFILE.linkedin, label: "LinkedIn" },
-                { href: PROFILE.fiverr, label: "Fiverr" },
-                { href: PROFILE.upwork, label: "Upwork" },
               ].map((s) => (
                 <a
                   key={s.label}
@@ -176,7 +154,7 @@ export default function Hero() {
                     {PROFILE.name}
                   </p>
                   <p className="text-xs" style={{ color: "var(--muted)" }}>
-                    Software Developer III · {PROFILE.location}
+                    Senior Engineer · {PROFILE.location}
                   </p>
                 </div>
               </div>
@@ -204,7 +182,7 @@ export default function Hero() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
-                {["Next.js", "NestJS", "Laravel", "React", "TypeScript", "AI APIs"].map((t) => (
+                {["Laravel", "NestJS", "Vue / Nuxt", "React", "Python", "TypeScript"].map((t) => (
                   <span
                     key={t}
                     className="text-xs px-3 py-1 rounded-full"

@@ -32,7 +32,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="font-bold text-lg" style={{ fontFamily: "Syne, sans-serif" }}>
-          mf<span style={{ color: "var(--accent)" }}>.</span>dev
+          Muhammad <span style={{ color: "var(--accent)" }}>Faraz</span>
         </a>
 
         {/* Desktop Links */}
