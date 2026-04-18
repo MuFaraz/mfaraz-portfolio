@@ -6,13 +6,6 @@ export default function Footer() {
       className="py-8 text-center"
       style={{ borderTop: "1px solid var(--border)" }}
     >
-      <p className="text-xs" style={{ color: "var(--muted)" }}>
-        Built with Next.js & ❤️ by{" "}
-        <span style={{ color: "var(--accent)", fontFamily: "Syne, sans-serif", fontWeight: 700 }}>
-          {PROFILE.name}
-        </span>{" "}
-        · Full-Stack Engineer · {PROFILE.location}
-      </p>
       <p className="text-xs mt-1" style={{ color: "rgba(120,120,150,0.5)" }}>
         © {new Date().getFullYear()} All rights reserved.
       </p>

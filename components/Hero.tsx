@@ -39,7 +39,7 @@ export default function Hero() {
                     display: "inline-block",
                   }}
                 />
-                Open to Freelance Projects
+                Open to Work
               </div>
             )}
 
@@ -182,7 +182,7 @@ export default function Hero() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
-                {["Laravel", "NestJS", "Vue / Nuxt", "React", "Python", "TypeScript"].map((t) => (
+                {["Laravel", "NestJS", "AI APIs", "Vue / Nuxt", "React", "Python"].map((t) => (
                   <span
                     key={t}
                     className="text-xs px-3 py-1 rounded-full"
@@ -202,7 +202,6 @@ export default function Hero() {
                 className="mt-4 pt-4 flex items-center justify-between text-xs"
                 style={{ borderTop: "1px solid var(--border)", color: "var(--muted)" }}
               >
-                <span>📍 {PROFILE.location}</span>
                 <span style={{ color: "var(--accent3)" }}>✓ Available Now</span>
               </div>
             </div>

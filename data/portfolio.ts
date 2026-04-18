@@ -5,8 +5,8 @@
 export const PROFILE = {
   name: "Muhammad Faraz",
   title: "Senior Full-Stack Engineer",
-  tagline: "Laravel · NestJS · Python · Vue · React · Next.js",
-  bio: "5+ years building scalable web applications. Expert in architecting robust backends with NestJS and Laravel, and crafting high-performance frontends with Vue, Nuxt, React, and Next.js. I specialize in enterprise-grade solutions and specialized CMS architectures.",
+  tagline: "Laravel · NestJS · AI Integrations · Python · Vue · React",
+  bio: "5+ years Senior Full-Stack Engineer. Expert in architecting robust backends with NestJS and Laravel, and integrating advanced AI/LLM solutions (ChatGPT, OpenAI). Crafting high-performance frontends with Vue, Nuxt, and React.",
   location: "Karachi, Pakistan",
   email: "muhammadfaraz991@gmail.com",
   phone: "+92 312 854 2140",
@@ -94,9 +94,9 @@ export const SERVICES = [
     id: "ai-solutions",
     icon: "🤖",
     title: "AI & API Integrations",
-    description: "Integrating OpenAI, Claude, and specialized tools into existing web ecosystems to automate workflows and enhance user experience.",
-    tags: ["OpenAI", "ChatGPT", "Claude API", "Python"],
-    highlighted: false,
+    description: "Integrating OpenAI, ChatGPT, Claude, and LLM-based tools into web ecosystems to automate workflows and enhance UI/UX.",
+    tags: ["OpenAI", "ChatGPT", "LLM Integration", "Python"],
+    highlighted: true,
   },
   {
     id: "performance",
