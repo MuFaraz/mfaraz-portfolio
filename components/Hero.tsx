@@ -83,7 +83,7 @@ export default function Hero() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "none"; }}
               >
-                Explore AI Certifications
+                Explore AI Certifications 
               </a>
               <a
                 href="#projects"
