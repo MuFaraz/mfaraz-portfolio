@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { PROFILE } from "@/data/portfolio";
 
 const links = [
+  { href: "#certifications", label: "Certifications" },
   { href: "#skills", label: "Skills" },
   { href: "#services", label: "Services" },
   { href: "#projects", label: "Projects" },

@@ -77,16 +77,16 @@ export default function Hero() {
 
             <div className="flex flex-wrap gap-3">
               <a
-                href="#projects"
-                className="px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200"
+                href="#certifications"
+                className="px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200 shadow-lg shadow-indigo-500/20"
                 style={{ background: "var(--accent)", color: "#fff" }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "none"; }}
               >
-                View My Work →
+                Explore AI Certifications
               </a>
               <a
-                href="#contact"
+                href="#projects"
                 className="px-6 py-3 rounded-lg text-sm font-medium transition-all duration-200"
                 style={{
                   background: "transparent",
@@ -102,7 +102,7 @@ export default function Hero() {
                   (e.currentTarget as HTMLElement).style.color = "var(--text)";
                 }}
               >
-                Get In Touch
+                View Projects →
               </a>
             </div>
 
@@ -141,9 +141,9 @@ export default function Hero() {
               {/* Avatar */}
               <div className="flex items-center gap-4 mb-6">
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center font-extrabold text-xl text-white"
+                  className="w-16 h-16 rounded-full flex items-center justify-center font-extrabold text-xl text-white shadow-lg"
                   style={{
-                    background: "linear-gradient(135deg, var(--accent), var(--accent2))",
+                    background: "linear-gradient(135deg, var(--accent), #d97757)",
                     fontFamily: "Syne, sans-serif",
                   }}
                 >
@@ -154,7 +154,7 @@ export default function Hero() {
                     {PROFILE.name}
                   </p>
                   <p className="text-xs" style={{ color: "var(--muted)" }}>
-                    Senior Engineer · {PROFILE.location}
+                    Senior & Certified AI Engineer · {PROFILE.location}
                   </p>
                 </div>
               </div>
@@ -164,7 +164,7 @@ export default function Hero() {
                 {PROFILE.stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-xl p-4"
+                    className="rounded-xl p-4 transition-transform duration-200 hover:scale-[1.02]"
                     style={{ background: "var(--bg3)" }}
                   >
                     <p
@@ -182,7 +182,7 @@ export default function Hero() {
 
               {/* Tags */}
               <div className="flex flex-wrap gap-2">
-                {["Laravel", "NestJS", "AI APIs", "Vue / Nuxt", "React", "Python"].map((t) => (
+                {["MCP Specification", "Subagents", "Claude Code", "NestJS", "Laravel", "Next.js", "Python"].map((t) => (
                   <span
                     key={t}
                     className="text-xs px-3 py-1 rounded-full"
@@ -203,6 +203,7 @@ export default function Hero() {
                 style={{ borderTop: "1px solid var(--border)", color: "var(--muted)" }}
               >
                 <span style={{ color: "var(--accent3)" }}>✓ Available Now</span>
+                <span style={{ color: "#d97757" }}>Anthropic Certified</span>
               </div>
             </div>
           </div>

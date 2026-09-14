@@ -4,9 +4,9 @@
 
 export const PROFILE = {
   name: "Muhammad Faraz",
-  title: "Senior Full-Stack Engineer",
-  tagline: "Laravel · NestJS · AI Integrations · Python · Vue · React",
-  bio: "5+ years Senior Full-Stack Engineer. Expert in architecting robust backends with NestJS and Laravel, and integrating advanced AI/LLM solutions (ChatGPT, OpenAI). Crafting high-performance frontends with Vue, Nuxt, and React.",
+  title: "Senior Full-Stack & AI Product Engineer",
+   tagline: "NestJS · Next.js · React · TypeScript · Node.js · Laravel · PHP · MySQL · AI Integrations",
+    bio: "5+ years Senior Full-Stack Engineer & Certified AI Developer. Expert in building autonomous agent systems, Model Context Protocol (MCP) integrations, robust backends with NestJS & Laravel, and high-performance frontends with Next.js, React, & Vue.",
   location: "Karachi, Pakistan",
   email: "muhammadfaraz991@gmail.com",
   phone: "+92 312 854 2140",
@@ -17,8 +17,8 @@ export const PROFILE = {
   availableForWork: true,
   stats: [
     { value: "5+", label: "Years Exp" },
+    { value: "12+", label: "AI & Tech Certs" },
     { value: "20+", label: "Live Projects" },
-    { value: "15+", label: "Technologies" },
     { value: "100%", label: "Client Success" },
   ],
 };
@@ -27,6 +27,11 @@ export const PROFILE = {
 //  SKILLS — Add / remove as needed
 // ============================================================
 export const SKILLS = [
+  {
+    category: "Agentic AI & MCP",
+    icon: "🧠",
+    items: ["Claude Code", "Claude API", "Agent Skills", "OpenAI Integrations"],
+  },
   {
     category: "Modern Stack",
     icon: "⚡",
@@ -50,7 +55,7 @@ export const SKILLS = [
   {
     category: "Tools & DevOps",
     icon: "🤖",
-    items: ["Docker", "Git / CI/CD", "OpenAI API", "AWS / Vercel"],
+    items: ["Docker", "Git / CI/CD", "Claude Code CLI", "AWS / Vercel"],
   },
 ];
 
@@ -335,8 +340,163 @@ export const EXPERIENCE = [
 ];
 
 // ============================================================
+//  CERTIFICATIONS & COURSES — Anthropic AI & Claude Ecosystem
+// ============================================================
+export interface Course {
+  id: string;
+  title: string;
+  provider: string;
+  category: "Agentic AI & MCP" | "Claude Engineering" | "AI Foundations";
+  status: "Completed" | "In Progress";
+  completedDate?: string;
+  enrolledDate: string;
+  score?: string;
+  lessonsProgress?: string;
+  icon: string;
+  badge?: string;
+  skills: string[];
+}
+
+export const COURSES: Course[] = [
+  {
+    id: "mcp-advanced",
+    title: "Model Context Protocol: Advanced Topics",
+    provider: "Anthropic Claude Academy",
+    category: "Agentic AI & MCP",
+    status: "Completed",
+    completedDate: "2026-Aug-31",
+    enrolledDate: "2026-Jul-12",
+    badge: "Verified Certificate",
+    icon: "⚡",
+    skills: ["MCP Server Specs", "Custom Transports", "Advanced Tooling", "Resource Templates"],
+  },
+  {
+    id: "mcp-intro",
+    title: "Introduction to Model Context Protocol",
+    provider: "Anthropic Claude Academy",
+    category: "Agentic AI & MCP",
+    status: "Completed",
+    completedDate: "2026-Aug-31",
+    enrolledDate: "2026-Jul-12",
+    badge: "Verified Certificate",
+    icon: "🔌",
+    skills: ["MCP Architecture", "Server/Client Protocol", "Context Integration"],
+  },
+  {
+    id: "agent-skills-intro",
+    title: "Introduction to Agent Skills",
+    provider: "Anthropic Claude Academy",
+    category: "Agentic AI & MCP",
+    status: "Completed",
+    completedDate: "2026-Aug-30",
+    enrolledDate: "2026-Jul-12",
+    badge: "Verified Certificate",
+    icon: "🛠️",
+    skills: ["Agent Workflows", "Tool Definition", "Custom Capabilities"],
+  },
+  {
+    id: "subagents-intro",
+    title: "Introduction to Subagents",
+    provider: "Anthropic Claude Academy",
+    category: "Agentic AI & MCP",
+    status: "Completed",
+    completedDate: "2026-Aug-30",
+    enrolledDate: "2026-Jul-12",
+    badge: "Verified Certificate",
+    icon: "🤖",
+    skills: ["Multi-Agent Systems", "Subagent Delegation", "Autonomous Workflows"],
+  },
+  {
+    id: "claude-code-action",
+    title: "Claude Code in Action",
+    provider: "Anthropic Claude Academy",
+    category: "Claude Engineering",
+    status: "Completed",
+    completedDate: "2026-Jul-12",
+    enrolledDate: "2026-Jul-11",
+    badge: "Verified Certificate",
+    icon: "🚀",
+    skills: ["Automated Engineering", "Terminal Workflows", "Codebase Analysis"],
+  },
+  {
+    id: "claude-platform-101",
+    title: "Claude Platform 101",
+    provider: "Anthropic Claude Academy",
+    category: "Claude Engineering",
+    status: "Completed",
+    completedDate: "2026-Jul-11",
+    enrolledDate: "2026-Jul-05",
+    badge: "Verified Certificate",
+    icon: "🏗️",
+    skills: ["Console Management", "API Administration", "Usage & Billing Optimization"],
+  },
+  {
+    id: "claude-cowork",
+    title: "Introduction to Claude Cowork",
+    provider: "Anthropic Claude Academy",
+    category: "Claude Engineering",
+    status: "Completed",
+    completedDate: "2026-Jul-11",
+    enrolledDate: "2026-Jul-11",
+    badge: "Verified Certificate",
+    icon: "🤝",
+    skills: ["AI-Human Collaboration", "Workspace Automation", "Team Productivity"],
+  },
+  {
+    id: "claude-code-101",
+    title: "Claude Code 101",
+    provider: "Anthropic Claude Academy",
+    category: "Claude Engineering",
+    status: "Completed",
+    completedDate: "2026-Jul-04",
+    enrolledDate: "2026-Jul-02",
+    badge: "Verified Certificate",
+    icon: "💻",
+    skills: ["Claude CLI", "AI Pair Programming", "Agent Setup"],
+  },
+  {
+    id: "ai-capabilities",
+    title: "AI Capabilities and Limitations",
+    provider: "Anthropic Claude Academy",
+    category: "AI Foundations",
+    status: "Completed",
+    completedDate: "2026-Jul-04",
+    enrolledDate: "2026-Jul-01",
+    badge: "Verified Certificate",
+    icon: "🧠",
+    skills: ["LLM Guardrails", "Evaluation Frameworks", "Capabilities Mapping"],
+  },
+  {
+    id: "ai-fluency",
+    title: "AI Fluency: Framework & Foundations",
+    provider: "Anthropic Claude Academy",
+    category: "AI Foundations",
+    status: "Completed",
+    completedDate: "2026-Jul-02",
+    enrolledDate: "2026-Jul-02",
+    score: "10 / 10",
+    badge: "Perfect Score ⭐",
+    icon: "🎯",
+    skills: ["AI Frameworks", "Prompt Engineering", "Foundational Concepts"],
+  },
+  {
+    id: "claude-101",
+    title: "Claude 101",
+    provider: "Anthropic Claude Academy",
+    category: "AI Foundations",
+    status: "Completed",
+    completedDate: "2026-Jul-02",
+    enrolledDate: "2026-Jun-23",
+    badge: "Verified Certificate",
+    icon: "✨",
+    skills: ["Anthropic Ecosystem", "Model Architectures", "Prompting Fundamentals"],
+  },
+];
+
+// ============================================================
 //  TESTIMONIALS
 // ============================================================
 export const TESTIMONIALS = [
   // Placeholder for professional references
 ];
+
