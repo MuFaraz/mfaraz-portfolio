@@ -10,7 +10,7 @@ export const PROFILE = {
   location: "Karachi, Pakistan",
   email: "muhammadfaraz991@gmail.com",
   phone: "+92 312 854 2140",
-  linkedin: "https://linkedin.com/in/muhammad-faraz",
+  linkedin: "https://www.linkedin.com/in/muhammad-faraz-644135199/",
   githubWork: "https://github.com/mfarazgt",
   githubPersonal: "https://github.com/MuFaraz",
   resumeUrl: "/resume.pdf", // place your PDF in /public folder
