@@ -3,20 +3,20 @@ import { EXPERIENCE } from "@/data/portfolio";
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24" style={{ borderTop: "1px solid var(--border)" }}>
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="experience" className="py-20 md:py-24" style={{ borderTop: "1px solid var(--border)" }}>
+      <div className="max-w-6xl mx-auto px-5">
         <div className="mb-12">
           <span
             className="text-xs font-semibold tracking-widest uppercase"
             style={{ color: "var(--accent)" }}
           >
-            Career Journey
+            Track Record
           </span>
           <h2
             className="text-3xl md:text-4xl font-extrabold mt-2"
             style={{ fontFamily: "Syne, sans-serif" }}
           >
-            Work Experience
+            5+ years of shipping real products
           </h2>
         </div>
 

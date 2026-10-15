@@ -4,283 +4,345 @@
 
 export const PROFILE = {
   name: "Muhammad Faraz",
-  title: "Senior Full-Stack & AI Product Engineer",
-   tagline: "NestJS · Next.js · React · TypeScript · Node.js · Laravel · PHP · MySQL · AI Integrations",
-    bio: "5+ years Senior Full-Stack Engineer & Certified AI Developer. Expert in building autonomous agent systems, Model Context Protocol (MCP) integrations, robust backends with NestJS & Laravel, and high-performance frontends with Next.js, React, & Vue.",
+  title: "Senior Full-Stack & AI Developer",
+  // Hero copy — written for business owners arriving from ads, not recruiters
+  headline: "I build websites & web apps that bring you customers.",
+  subheadline:
+    "Senior full-stack developer with 5+ years and 20+ live projects for businesses in the US, UK & Canada. Business websites, online stores, custom web apps and AI automation — built properly, delivered on time.",
+  tagline: "Next.js · React · NestJS · Laravel · WordPress · Shopify · AI Integrations",
   location: "Karachi, Pakistan",
   email: "muhammadfaraz991@gmail.com",
   phone: "+92 312 854 2140",
+  whatsapp: "923128542140", // digits only, used for wa.me links
   linkedin: "https://www.linkedin.com/in/muhammad-faraz-644135199/",
   githubWork: "https://github.com/mfarazgt",
   githubPersonal: "https://github.com/MuFaraz",
-  resumeUrl: "/resume.pdf", // place your PDF in /public folder
   availableForWork: true,
+  countries: ["United States", "United Kingdom", "Canada", "Pakistan"],
+  guarantees: ["Free consultation", "Reply within 24 hours", "Work directly with the developer"],
   stats: [
-    { value: "5+", label: "Years Exp" },
-    { value: "12+", label: "AI & Tech Certs" },
-    { value: "20+", label: "Live Projects" },
-    { value: "100%", label: "Client Success" },
+    { value: "5+", label: "Years experience" },
+    { value: "20+", label: "Live projects" },
+    { value: "3", label: "Countries served" },
+    { value: "11", label: "AI certifications" },
   ],
 };
 
-// ============================================================
-//  SKILLS — Add / remove as needed
-// ============================================================
-export const SKILLS = [
-  {
-    category: "Agentic AI & MCP",
-    icon: "🧠",
-    items: ["Claude Code", "Claude API", "Agent Skills", "OpenAI Integrations"],
-  },
-  {
-    category: "Modern Stack",
-    icon: "⚡",
-    items: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Redux Toolkit"],
-  },
-  {
-    category: "Backend & Systems",
-    icon: "🔧",
-    items: ["NestJS", "Node.js", "Laravel", "PHP", "RabbitMQ", "Microservices"],
-  },
-  {
-    category: "Databases & Auth",
-    icon: "🗄️",
-    items: ["MySQL", "PostgreSQL", "MongoDB", "Redis", "JWT / OAuth2"],
-  },
-  {
-    category: "CMS & Platforms",
-    icon: "🚀",
-    items: ["WordPress Customization", "Shopify", "Headless CMS", "WooCommerce"],
-  },
-  {
-    category: "Tools & DevOps",
-    icon: "🤖",
-    items: ["Docker", "Git / CI/CD", "Claude Code CLI", "AWS / Vercel"],
-  },
-];
+// Prefilled WhatsApp message used by every "Get a quote" button
+export const WHATSAPP_DEFAULT_MESSAGE =
+  "Hi Faraz, I saw your portfolio and I'd like to discuss a project.";
 
 // ============================================================
-//  SERVICES — Highlighting Core Expertise
+//  SERVICES — Written as outcomes a client is buying
 // ============================================================
 export const SERVICES = [
   {
-    id: "fullstack-arch",
+    id: "business-website",
+    icon: "🌐",
+    title: "Business Website",
+    description:
+      "A fast, modern website that explains what you do and turns visitors into calls, WhatsApp messages and bookings.",
+    idealFor: "Clinics, agencies, consultants, local businesses",
+    tags: ["Next.js", "WordPress", "SEO-ready", "Mobile-first"],
+  },
+  {
+    id: "ecommerce",
+    icon: "🛒",
+    title: "Online Store / E-Commerce",
+    description:
+      "Shopify, WooCommerce or fully custom stores with payments, inventory and order management — built to sell.",
+    idealFor: "Brands, retailers, product sellers",
+    tags: ["Shopify", "WooCommerce", "Laravel", "Stripe / PayPal"],
+  },
+  {
+    id: "web-app",
     icon: "🏗️",
-    title: "Enterprise Web Architecture",
-    description: "Scalable end-to-end development using NestJS, Laravel, and Python. I build robust backends and reactive frontends with Vue and React.",
-    tags: ["NestJS", "Laravel", "Vue", "React", "Python"],
-    highlighted: true,
+    title: "Custom Web App & SaaS",
+    description:
+      "Portals, dashboards, booking systems and SaaS products with user roles, admin panels and secure APIs.",
+    idealFor: "Startups, schools, logistics, service companies",
+    tags: ["Next.js", "NestJS", "Laravel", "PostgreSQL"],
   },
   {
-    id: "laravel-expert",
-    icon: "💎",
-    title: "Enterprise Laravel Development",
-    description: "Robust, secure, and high-performance backend solutions using Laravel. Specializing in RESTful APIs, multi-role auth, and complex business logic.",
-    tags: ["Laravel", "PHP", "MySQL", "Authentication"],
-    highlighted: true,
-  },
-  {
-    id: "wp-custom",
-    icon: "🔌",
-    title: "Advanced WordPress & CMS",
-    description: "Beyond simple sites — I specialize in custom plugin development, theme customization, and specialized e-commerce solutions that scale.",
-    tags: ["WordPress", "PHP", "Shopify", "WooCommerce"],
-    highlighted: true,
-  },
-  {
-    id: "backend-systems",
-    icon: "⚙️",
-    title: "Backend & Event-Driven Systems",
-    description: "Building resilient backends with NestJS and RabbitMQ. Implementing message queues, microservices, and real-time processing.",
-    tags: ["NestJS", "RabbitMQ", "Node.js", "Real-time"],
-    highlighted: false,
-  },
-  {
-    id: "ai-solutions",
+    id: "ai-automation",
     icon: "🤖",
-    title: "AI & API Integrations",
-    description: "Integrating OpenAI, ChatGPT, Claude, and LLM-based tools into web ecosystems to automate workflows and enhance UI/UX.",
-    tags: ["OpenAI", "ChatGPT", "LLM Integration", "Python"],
-    highlighted: true,
+    title: "AI Chatbots & Automation",
+    description:
+      "AI assistants and automations using Claude & OpenAI that answer customers, qualify leads and save your team hours.",
+    idealFor: "Businesses with repetitive support or sales work",
+    tags: ["Claude API", "OpenAI", "MCP", "Automation"],
   },
   {
-    id: "performance",
+    id: "lead-gen",
+    icon: "📈",
+    title: "Lead Generation Platforms",
+    description:
+      "Landing pages and lead-capture systems with forms, tracking and routing — like the US legal-lead platforms I've built.",
+    idealFor: "Law firms, home services, marketing agencies",
+    tags: ["Landing Pages", "Lead Tracking", "PHP", "WordPress"],
+  },
+  {
+    id: "fix-speed",
     icon: "⚡",
-    title: "Performance & SEO Optimization",
-    description: "Refactoring legacy code, optimizing database queries, and achieving perfect Lighthouse scores for Next.js or WordPress applications.",
-    tags: ["Next.js", "Core Web Vitals", "Speed", "SEO"],
-    highlighted: false,
+    title: "Fixes, Speed & SEO",
+    description:
+      "Slow, broken or outdated site? I fix bugs, speed up load times, clean up legacy code and improve Google rankings.",
+    idealFor: "Existing WordPress, Laravel or React sites",
+    tags: ["Core Web Vitals", "Bug Fixing", "SEO", "Maintenance"],
   },
 ];
 
 // ============================================================
-//  PROJECTS — Overhauled & Expanded
+//  PROJECTS — Featured ones are shown first
 // ============================================================
-export const PROJECTS = [
+export interface Project {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  tags: string[];
+  category: "Web Apps" | "E-Commerce" | "Websites & Lead Gen";
+  industry: string;
+  market?: string;
+  featured: boolean;
+}
+
+export const PROJECTS: Project[] = [
   {
-    id: "nutriwest",
-    emoji: "",
-    title: "Nutriwest – Healthcare E-Commerce",
-    description: "Scalable healthcare platform managing medicine distribution. Built with Laravel for reliability and secure API handling.",
-    url: "https://www.nutriwest.com",
-    tags: ["Laravel", "PHP", "E-Commerce", "MySQL"],
-    category: "E-Commerce",
+    id: "oneid",
+    title: "Community Data Platform",
+    description: "Full-stack demographic data platform with family-tree relationships and role-based access control. Built with Next.js and NestJS for performance and security.",
+    url: "https://oneid.world-federation.org",
+    tags: ["Next.js", "NestJS", "TypeScript", "RBAC"],
+    category: "Web Apps",
+    industry: "Non-profit",
     featured: true,
   },
   {
     id: "edex",
-    emoji: "",
-    title: "EdEx Online – Scalable Education",
-    description: "UK-based education ecosystem featuring parental portals and student management. Re-architected with a NestJS backend utilizing RabbitMQ for distributed tasks.",
+    title: "EdEx Online – Education Platform",
+    description: "Education ecosystem with parent portals and student management. Re-architected with a NestJS backend using RabbitMQ for distributed tasks.",
     url: "https://edexonline.co.uk",
-    tags: ["NestJS", "RabbitMQ", "Node.js", "Service Worker", "React"],
-    category: "Backend",
-    featured: true,
-  },
-
-
-  {
-    id: "legal-leads",
-    emoji: "",
-    title: "LegalLead Engine",
-    description: "A lead generation platform for legal entities. Built with a core PHP/WordPress hybrid for speed and flexibility.",
-    url: "https://affordableattorneyleads.com/",
-    tags: ["Core PHP", "WordPress", "Lead Gen"],
-    category: "Backend",
+    tags: ["NestJS", "RabbitMQ", "Node.js", "React"],
+    category: "Web Apps",
+    industry: "Education",
+    market: "UK",
     featured: true,
   },
   {
-    id: "legal-help",
-    emoji: "",
-    title: "Affordable Legal Help – Family Law Portal",
-    description: "A lead generation and connection platform for family law services in the US. Built with Core PHP and Bootstrap to facilitate quick connections between clients and local legal professionals.",
-    url: "https://affordablelegalhelp.com/",
-    tags: ["Core PHP", "Bootstrap", "Lead Gen", "DataTables"],
-    category: "Full-Stack",
-    featured: true,
-  },
-  {
-    id: "organicformula",
-    emoji: "",
-    title: "Pure Organic E-Shop",
-    description: "A high-conversion Shopify store for organic formula products. Includes custom theme adjustments and specialized app integrations.",
-    url: "https://organicformulashop.com/",
-    tags: ["Shopify", "E-Commerce", "Liquid", "UI/UX"],
+    id: "nutriwest",
+    title: "Nutriwest – Healthcare E-Commerce",
+    description: "Healthcare platform managing product distribution and online orders. Built with Laravel for reliability and secure API handling.",
+    url: "https://www.nutriwest.com",
+    tags: ["Laravel", "PHP", "E-Commerce", "MySQL"],
     category: "E-Commerce",
-    featured: false,
-  },
-  {
-    id: "oneid",
-    emoji: "",
-    title: "Community Data Platform",
-    description: "Full-stack demographic data platform with family tree relationships and RBAC. Built with Next.js and NestJS for high performance and security.",
-    url: "https://oneid.world-federation.org",
-    tags: ["Next.js", "NestJS", "TypeScript", "RBAC"],
-    category: "Full-Stack",
+    industry: "Healthcare",
     featured: true,
   },
   {
     id: "eventfouryou",
-    emoji: "",
-    title: "EventFourYou – Event Management",
-    description: "A comprehensive event management and ticketing platform built with Laravel. Features advanced booking logic, payment integration, and a dedicated admin dashboard.",
+    title: "EventFourYou – Event Ticketing",
+    description: "Event management and ticketing platform with booking logic, payment integration and a dedicated admin dashboard.",
     url: "https://eventfouryou.com/",
     tags: ["Laravel", "PHP", "MySQL", "Payments"],
-    category: "Full-Stack",
+    category: "Web Apps",
+    industry: "Events",
     featured: true,
   },
-
-
   {
     id: "tradefindry",
-    emoji: "",
     title: "TradeConnect – Logistics Portal",
-    description: "A specialized portal for trade and logistics management. Built with React and Node.js to handle complex data flows and user permissions.",
+    description: "Portal for trade and logistics management. Built with React and Node.js to handle complex data flows and user permissions.",
     url: "https://portal.tradefindry.com/",
     tags: ["React", "Node.js", "Tailwind", "Logistics"],
-    category: "Full-Stack",
+    category: "Web Apps",
+    industry: "Logistics",
+    featured: true,
+  },
+  {
+    id: "legal-help",
+    title: "Affordable Legal Help – Family Law Leads",
+    description: "Lead generation platform connecting US clients with local family-law professionals. Built for speed and quick enquiries.",
+    url: "https://affordablelegalhelp.com/",
+    tags: ["Core PHP", "Bootstrap", "Lead Gen", "DataTables"],
+    category: "Websites & Lead Gen",
+    industry: "Legal",
+    market: "US",
+    featured: true,
+  },
+  {
+    id: "legal-leads",
+    title: "LegalLead Engine",
+    description: "Lead generation platform for law firms, built on a Core PHP / WordPress hybrid for speed and flexibility.",
+    url: "https://affordableattorneyleads.com/",
+    tags: ["Core PHP", "WordPress", "Lead Gen"],
+    category: "Websites & Lead Gen",
+    industry: "Legal",
+    market: "US",
     featured: true,
   },
   {
     id: "dibbly",
-    emoji: "",
-    title: "Collaborative Creative Flow",
-    description: "A high-performance creative workflow application built with Next.js. Worked closely with the client to implement real-time collaborative features.",
+    title: "Dibbly – Collaborative Creative App",
+    description: "High-performance creative workflow application built with Next.js. Worked directly with the client to ship real-time collaboration features.",
     url: "https://app.dibbly.com/sign-in",
-    tags: ["Next.js", "React", "Collaboration", "Client Facing"],
-    category: "Full-Stack",
+    tags: ["Next.js", "React", "Collaboration"],
+    category: "Web Apps",
+    industry: "SaaS",
     featured: true,
   },
   {
-    id: "khojabusiness",
-    emoji: "",
-    title: "Elite Business Directory",
-    description: "A robust B2B directory and networking platform. Developed as a clean decoupled system using the MERN stack (MongoDB, Express, React, Node).",
-    url: "https://khojabusiness.genetechz.com/",
-    tags: ["MERN Stack", "React", "Node.js", "B2B"],
-    category: "Full-Stack",
-    featured: false,
-  },
-
-  {
-    id: "hydraway",
-    emoji: "",
-    title: "HydraWay Portal",
-    description: "Modernized digital presence for hydraway tech solutions. Built on WordPress with a focus on load times and custom service layouts.",
-    url: "https://hydraway.net/",
-    tags: ["WordPress", "SEO", "Custom Theme"],
-    category: "Full-Stack",
+    id: "organicformula",
+    title: "Pure Organic E-Shop",
+    description: "Shopify store for organic formula products with custom theme work and specialised app integrations.",
+    url: "https://organicformulashop.com/",
+    tags: ["Shopify", "Liquid", "E-Commerce"],
+    category: "E-Commerce",
+    industry: "Retail",
     featured: false,
   },
   {
     id: "platemaster",
-    emoji: "",
     title: "PlateMaster Customizer",
-    description: "Automotive customization platform for custom license plates. Extensive WordPress backend customization to handle unique user input.",
+    description: "Custom licence-plate store with a product customiser. Extensive WordPress backend work to handle unique user input.",
     url: "https://www.licenseplates.tv/",
-    tags: ["WordPress", "Customization", "PHP", "E-Commerce"],
+    tags: ["WordPress", "WooCommerce", "PHP"],
     category: "E-Commerce",
-    featured: false,
-  },
-  {
-    id: "brand-launch",
-    emoji: "",
-    title: "BrandLaunch CMS",
-    description: "Business management portal with custom CMS features built on WordPress. Scaled to handle high traffic and multiple business modules.",
-    url: "https://www.brandnewbusinesses.com/",
-    tags: ["WordPress", "CMS", "PHP"],
-    category: "Full-Stack",
-    featured: false,
-  },
-  {
-    id: "mover-analytics",
-    emoji: "",
-    title: "ServiceMover Gateway",
-    description: "Portal for logistics and moving services. Custom WordPress implementation with specialized lead tracking and booking features.",
-    url: "https://www.brandnewmovers.com/",
-    tags: ["WordPress", "Customization", "Logistics"],
-    category: "Full-Stack",
-    featured: false,
-  },
-  {
-    id: "insight-home",
-    emoji: "",
-    title: "Homeowner Service Portal",
-    description: "Information and service platform for homeowners. WordPress-based system with extensive custom functionality for user outreach.",
-    url: "https://www.brandnewhomeowners.com/",
-    tags: ["WordPress", "PHP", "UI/UX"],
-    category: "Full-Stack",
+    industry: "Automotive",
     featured: false,
   },
   {
     id: "shaykis",
-    emoji: "",
-    title: "Shayks Lifestyle Retail",
-    description: "UK-based lifestyle and retail platform. Integrated custom e-commerce features with a focus on British market nuances.",
+    title: "Shaykis Lifestyle Retail",
+    description: "Lifestyle and retail store with custom e-commerce features tailored to the British market.",
     url: "https://shaykis.co.uk/",
-    tags: ["E-Commerce", "WordPress", "UK Market"],
+    tags: ["E-Commerce", "WordPress"],
     category: "E-Commerce",
+    industry: "Retail",
+    market: "UK",
     featured: false,
+  },
+  {
+    id: "brand-launch",
+    title: "BrandLaunch Business Portal",
+    description: "Business portal with custom CMS features on WordPress, scaled to handle high traffic and multiple modules.",
+    url: "https://www.brandnewbusinesses.com/",
+    tags: ["WordPress", "CMS", "PHP"],
+    category: "Websites & Lead Gen",
+    industry: "Lead Gen",
+    featured: false,
+  },
+  {
+    id: "mover-analytics",
+    title: "ServiceMover Gateway",
+    description: "Portal for moving services with custom lead tracking and booking features.",
+    url: "https://www.brandnewmovers.com/",
+    tags: ["WordPress", "Lead Tracking", "Booking"],
+    category: "Websites & Lead Gen",
+    industry: "Home Services",
+    featured: false,
+  },
+  {
+    id: "insight-home",
+    title: "Homeowner Service Portal",
+    description: "Information and service platform for homeowners with custom outreach functionality.",
+    url: "https://www.brandnewhomeowners.com/",
+    tags: ["WordPress", "PHP", "UI/UX"],
+    category: "Websites & Lead Gen",
+    industry: "Home Services",
+    featured: false,
+  },
+  {
+    id: "hydraway",
+    title: "HydraWay Website",
+    description: "Modernised company website with a focus on load times and custom service layouts.",
+    url: "https://hydraway.net/",
+    tags: ["WordPress", "SEO", "Custom Theme"],
+    category: "Websites & Lead Gen",
+    industry: "Technology",
+    featured: false,
+  },
+];
+
+// ============================================================
+//  PROCESS — How working together looks
+// ============================================================
+export const PROCESS = [
+  {
+    step: "01",
+    title: "Free call or chat",
+    description: "Tell me about your business and goals on WhatsApp, a call or email. No cost, no commitment.",
+  },
+  {
+    step: "02",
+    title: "Clear plan & quote",
+    description: "You get a written scope, timeline and price — so you know exactly what you're getting before we start.",
+  },
+  {
+    step: "03",
+    title: "Build with updates",
+    description: "I build in stages and share progress regularly, so you can review and give feedback along the way.",
+  },
+  {
+    step: "04",
+    title: "Launch & support",
+    description: "I deploy your project, walk you through it, and stay available for fixes and improvements after launch.",
+  },
+];
+
+// ============================================================
+//  WHY ME — Reasons to choose me over an agency / random freelancer
+// ============================================================
+export const WHY_ME = [
+  {
+    icon: "🧑‍💻",
+    title: "Senior-level, not a beginner",
+    description: "5+ years building production systems for clients in the US, UK and Canada — currently a Software Developer III leading projects.",
+  },
+  {
+    icon: "💬",
+    title: "Clear, fast communication",
+    description: "You talk directly to the person writing your code. Regular updates in plain language — no tech jargon.",
+  },
+  {
+    icon: "🧩",
+    title: "One developer, full stack",
+    description: "Frontend, backend, database, payments, hosting and AI — no need to hire and coordinate multiple people.",
+  },
+  {
+    icon: "🤖",
+    title: "AI-ready from day one",
+    description: "Anthropic-certified in Claude, MCP and AI agents, so your product can use AI where it actually saves time and money.",
+  },
+];
+
+// ============================================================
+//  FAQ — Answer objections before they become reasons not to message
+// ============================================================
+export const FAQS = [
+  {
+    q: "How much does a website or web app cost?",
+    a: "It depends on what you need — a business website and a custom web app are very different projects. Message me with a short description and I'll send you a clear quote for free.",
+  },
+  {
+    q: "How long will my project take?",
+    a: "Smaller websites usually take 1–3 weeks, while custom web apps and stores take longer depending on features. You'll get a timeline with the quote before we start.",
+  },
+  {
+    q: "Do you work with clients outside Pakistan?",
+    a: "Yes. Most of my work has been for businesses in the United States, United Kingdom and Canada. I'm comfortable working across time zones.",
+  },
+  {
+    q: "Can you fix or improve my existing website?",
+    a: "Yes. I regularly fix bugs, speed up slow sites, add new features and modernise older WordPress, Laravel, PHP and React projects.",
+  },
+  {
+    q: "Will I be able to update the website myself?",
+    a: "Yes. If you want to manage content yourself, I'll set up an easy admin panel or CMS and show you how to use it.",
+  },
+  {
+    q: "What happens after the project is launched?",
+    a: "I stay available for fixes, updates and new features. Ongoing maintenance can also be arranged if you'd like me to look after the site.",
   },
 ];
 
@@ -494,9 +556,16 @@ export const COURSES: Course[] = [
 ];
 
 // ============================================================
-//  TESTIMONIALS
+//  TESTIMONIALS — Add REAL client reviews here; the section appears automatically.
+//  Ask past clients for 2–3 lines + permission to use their name.
 // ============================================================
-export const TESTIMONIALS = [
-  // Placeholder for professional references
+export interface Testimonial {
+  quote: string;
+  name: string;
+  role: string; // e.g. "Founder, EdEx Online"
+}
+
+export const TESTIMONIALS: Testimonial[] = [
+  // { quote: "Faraz delivered ...", name: "Jane Doe", role: "Founder, Company" },
 ];
 
