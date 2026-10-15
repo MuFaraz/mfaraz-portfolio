@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="flex flex-wrap justify-center gap-5 text-sm" style={{ color: "var(--muted)" }}>
           <a href={`mailto:${PROFILE.email}`} className="hover:text-[var(--text)]">Email</a>
           <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">LinkedIn</a>
-          <a href={PROFILE.githubPersonal} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">GitHub</a>
+          <a href={PROFILE.githubWork} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">GitHub</a>
         </div>
       </div>
       <p className="text-xs text-center mt-8" style={{ color: "rgba(120,120,150,0.5)" }}>
