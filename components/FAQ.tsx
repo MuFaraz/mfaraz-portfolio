@@ -19,8 +19,9 @@ export default function FAQ({ items = FAQS, title = "Frequently asked questions"
             >
               <summary className="flex items-center justify-between gap-4 cursor-pointer p-5 font-semibold text-sm md:text-base">
                 {f.q}
-                <span className="faq-icon text-xl transition-transform duration-200 flex-shrink-0" style={{ color: "var(--accent)" }}>
-                  +
+                <span className="text-xl flex-shrink-0" style={{ color: "var(--accent)" }} aria-hidden="true">
+                  <span className="group-open:hidden">+</span>
+                  <span className="hidden group-open:inline">−</span>
                 </span>
               </summary>
               <p className="px-5 pb-5 -mt-1 text-sm leading-relaxed" style={{ color: "var(--muted)" }}>

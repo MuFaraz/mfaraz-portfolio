@@ -325,27 +325,35 @@ export const WHY_ME = [
 export const FAQS = [
   {
     q: "How much does a website or web app cost?",
-    a: "It depends on what you need — a business website and a custom web app are very different projects. Message me with a short description and I'll send you a clear quote for free.",
+    a: "It depends on what you need. A business website and a custom web app are very different projects. Send me a short description and you'll get a clear, fixed quote for free, with no hidden costs later.",
   },
   {
     q: "How long will my project take?",
-    a: "Smaller websites usually take 1–3 weeks, while custom web apps and stores take longer depending on features. You'll get a timeline with the quote before we start.",
+    a: "Most business websites are ready in about 7 days. Online stores usually take 10–14 days. Custom web apps depend on features, but I'll send you an exact timeline with the quote and get the first version in front of you quickly.",
   },
   {
     q: "Do you work with clients outside Pakistan?",
-    a: "Yes. Most of my work has been for businesses in the United States, United Kingdom and Canada. I'm comfortable working across time zones.",
+    a: "Yes. I work with businesses both in Pakistan and abroad. Calls, updates and handover all happen online, and I adjust to your time zone.",
+  },
+  {
+    q: "Will I know what's happening during the project?",
+    a: "Yes. You get regular progress updates and a live preview link, so you can see the work as it's built and ask for changes before launch.",
   },
   {
     q: "Can you fix or improve my existing website?",
-    a: "Yes. I regularly fix bugs, speed up slow sites, add new features and modernise older WordPress, Laravel, PHP and React projects.",
+    a: "Yes. I fix bugs, speed up slow sites, add new features and modernise older WordPress, Laravel, PHP and React projects, without rebuilding everything from scratch.",
   },
   {
     q: "Will I be able to update the website myself?",
-    a: "Yes. If you want to manage content yourself, I'll set up an easy admin panel or CMS and show you how to use it.",
+    a: "Yes. I set up an easy admin panel and show you how to change text, photos, prices and products yourself. No coding needed.",
   },
   {
     q: "What happens after the project is launched?",
-    a: "I stay available for fixes, updates and new features. Ongoing maintenance can also be arranged if you'd like me to look after the site.",
+    a: "I don't disappear after launch. I stay available for fixes, updates and new features, and monthly maintenance can be arranged if you'd like me to look after the site.",
+  },
+  {
+    q: "How do we get started?",
+    a: "Message me on WhatsApp or email with a short description of what you need. I'll reply with questions, a quote and a timeline, usually within a day.",
   },
 ];
 

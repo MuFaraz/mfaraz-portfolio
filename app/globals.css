@@ -101,7 +101,6 @@ body {
 
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
-details[open] .faq-icon { transform: rotate(45deg); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
