@@ -17,20 +17,20 @@ export default async function Image() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "72px",
-          background: "linear-gradient(135deg, #07070f 0%, #17172a 60%, #0f3a26 100%)",
-          color: "#eeeef5",
+          background: "#0b0b0d",
+          color: "#ececef",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 26, color: "#3effa0" }}>For businesses in Karachi & across Pakistan</div>
-        <div style={{ fontSize: 76, fontWeight: 800, lineHeight: 1.1, marginTop: 28, maxWidth: 1000 }}>
+        <div style={{ display: "flex", fontSize: 26, color: "#4ade80" }}>For businesses in Karachi & across Pakistan</div>
+        <div style={{ fontSize: 76, fontWeight: 700, lineHeight: 1.1, marginTop: 28, maxWidth: 1000 }}>
           Your business website, live in 7 days.
         </div>
-        <div style={{ display: "flex", gap: 40, fontSize: 30, color: "#a79fff", marginTop: 36 }}>
+        <div style={{ display: "flex", gap: 40, fontSize: 30, color: "#a9c8ff", marginTop: 36 }}>
           <span>From {formatPKR(PACKAGES[0].priceFromPKR)}</span>
           <span>Websites · Online stores · AI chatbots</span>
         </div>
-        <div style={{ display: "flex", fontSize: 26, color: "#7a7a9a", marginTop: 36 }}>
+        <div style={{ display: "flex", fontSize: 26, color: "#8d8d96", marginTop: 36 }}>
           Muhammad Faraz · Rated 5.0 on Fiverr · Chat on WhatsApp
         </div>
       </div>

@@ -50,20 +50,20 @@ export default function Experience() {
                     className="card-hover rounded-xl p-5"
                     style={{
                       background: "var(--card)",
-                      border: isCurrent ? "1px solid rgba(124,107,255,0.3)" : "1px solid var(--border)",
+                      border: isCurrent ? "1px solid rgba(94,158,255,0.3)" : "1px solid var(--border)",
                     }}
                   >
                     <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                       <div>
-                        <h3 className="font-bold text-base" style={{ fontFamily: "Syne, sans-serif" }}>
+                        <h3 className="font-bold text-base" style={{ fontFamily: "var(--font-display)" }}>
                           {exp.role}
                           {isCurrent && (
                             <span
                               className="ml-2 text-xs px-2 py-0.5 rounded-full align-middle"
                               style={{
-                                background: "rgba(62,255,160,0.1)",
+                                background: "rgba(74,222,128,0.1)",
                                 color: "var(--accent3)",
-                                border: "1px solid rgba(62,255,160,0.2)",
+                                border: "1px solid rgba(74,222,128,0.2)",
                               }}
                             >
                               Current

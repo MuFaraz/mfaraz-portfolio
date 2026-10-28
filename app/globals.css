@@ -1,19 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
 
 @import "tailwindcss";
 
 :root {
-  --bg: #07070f;
-  --bg2: #0f0f1a;
-  --bg3: #17172a;
-  --accent: #7c6bff;
-  --accent-glow: rgba(124, 107, 255, 0.15);
-  --accent2: #ff6b8a;
-  --accent3: #3effa0;
-  --text: #eeeef5;
-  --muted: #7a7a9a;
-  --border: rgba(255, 255, 255, 0.06);
-  --card: #0d0d1c;
+  --bg: #0b0b0d;
+  --bg2: #101013;
+  --bg3: #18181c;
+  --card: #121215;
+  --accent: #5e9eff;
+  --accent-soft: #a9c8ff;
+  --accent3: #4ade80;
+  --star: #f5b83d;
+  --text: #ececef;
+  --muted: #8d8d96;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --font-display: 'Inter Tight', 'DM Sans', sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -26,50 +28,22 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
-::selection { background: rgba(124, 107, 255, 0.3); }
-
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(124,107,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(124,107,255,0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
+::-webkit-scrollbar-thumb { background: #2a2a30; border-radius: 3px; }
+::selection { background: rgba(94, 158, 255, 0.3); }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.85); }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
 }
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-@keyframes reveal-up {
-  from { opacity: 0; transform: translateY(28px); }
-  to { opacity: 1; transform: none; }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-.float { animation: float 4s ease-in-out infinite; }
 
 .card-hover {
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  transition: border-color 0.2s, background 0.2s;
 }
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(124,107,255,0.12);
+  border-color: var(--border-strong) !important;
+  background: #151519 !important;
 }
 
 /* Component classes live in a layer so Tailwind utilities (e.g. `hidden`) can override them */
@@ -80,93 +54,55 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.85rem 1.4rem;
-    border-radius: 0.75rem;
+    padding: 0.8rem 1.3rem;
+    border-radius: 0.6rem;
     font-size: 0.95rem;
     font-weight: 600;
-    transition: transform 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s, color 0.2s;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
     cursor: pointer;
     white-space: nowrap;
   }
-  .btn:hover { transform: translateY(-2px); }
   .btn-whatsapp {
     background: #25d366;
-    color: #062b16;
-    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.25);
+    color: #05250f;
   }
-  .btn-whatsapp:hover { box-shadow: 0 10px 36px rgba(37, 211, 102, 0.4); }
+  .btn-whatsapp:hover { background: #2fe076; }
   .btn-primary {
-    background: var(--accent);
-    color: #fff;
-    box-shadow: 0 8px 30px rgba(124, 107, 255, 0.25);
+    background: var(--text);
+    color: var(--bg);
   }
   .btn-ghost {
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid var(--border-strong);
     color: var(--text);
   }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-  .hero-btn { padding: 0.9rem 1rem; font-size: 0.95rem; }
+  .btn-ghost:hover { border-color: var(--text); }
+  .hero-btn { padding: 0.85rem 1rem; font-size: 0.95rem; }
   @media (min-width: 640px) {
-    .hero-btn { padding: 1rem 1.6rem; font-size: 1rem; }
+    .hero-btn { padding: 0.95rem 1.5rem; font-size: 1rem; }
   }
 
   .eyebrow {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--muted);
   }
   .section-title {
-    font-family: Syne, sans-serif;
-    font-weight: 800;
-    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.75rem, 3.6vw, 2.4rem);
     line-height: 1.15;
-    margin-top: 0.5rem;
+    letter-spacing: -0.02em;
+    margin-top: 0.35rem;
   }
 }
 
-.text-gradient {
-  background: linear-gradient(90deg, #a79fff, #ff8fa8);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* ---------- Trust marquee ---------- */
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-.marquee-mask {
-  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
-}
-
-/* ---------- Floating WhatsApp ---------- */
-@keyframes wa-ping {
-  0% { transform: scale(1); opacity: 0.6; }
-  80%, 100% { transform: scale(1.7); opacity: 0; }
-}
-.wa-ping::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background: #25d366;
-  animation: wa-ping 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
-  z-index: -1;
-}
+/* Highlighted words in headings — a quiet accent, not a gradient */
+.text-gradient { color: var(--accent-soft); }
 
 details > summary { list-style: none; }
 details > summary::-webkit-details-marker { display: none; }
 details[open] .faq-icon { transform: rotate(45deg); }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track, .float, .wa-ping::before { animation: none; }
   html { scroll-behavior: auto; }
 }

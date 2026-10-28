@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Briefcase, CodeXml, Mail, Phone, Star } from "lucide-react";
 import { PROFILE, SERVICES, FIVERR } from "@/data/portfolio";
 import { whatsappLink, emailLink, trackLead } from "@/lib/contact";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
@@ -33,23 +34,19 @@ export default function Contact() {
   };
 
   const contactLinks = [
-    { label: "WhatsApp / Phone", icon: "📱", value: PROFILE.phone, href: whatsappLink() },
-    { label: "Email", icon: "✉️", value: PROFILE.email, href: emailLink("Project enquiry") },
-    { label: "LinkedIn", icon: "💼", value: "Muhammad Faraz", href: PROFILE.linkedin },
-    { label: "GitHub (Work)", icon: "💻", value: "mfarazgt", href: PROFILE.githubWork },
-    { label: "GitHub (Personal)", icon: "🧑‍💻", value: "MuFaraz", href: PROFILE.githubPersonal },
-    { label: `Fiverr · ${FIVERR.rating} ★ (${FIVERR.reviewCount} reviews)`, icon: "⭐", value: "muhammadfaraz99", href: FIVERR.url },
+    { label: "WhatsApp / Phone", icon: Phone, value: PROFILE.phone, href: whatsappLink() },
+    { label: "Email", icon: Mail, value: PROFILE.email, href: emailLink("Project enquiry") },
+    { label: "LinkedIn", icon: Briefcase, value: "Muhammad Faraz", href: PROFILE.linkedin },
+    { label: "GitHub (Work)", icon: CodeXml, value: "mfarazgt", href: PROFILE.githubWork },
+    { label: "GitHub (Personal)", icon: CodeXml, value: "MuFaraz", href: PROFILE.githubPersonal },
+    { label: `Fiverr · ${FIVERR.rating} rating (${FIVERR.reviewCount} reviews)`, icon: Star, value: "muhammadfaraz99", href: FIVERR.url },
   ];
 
   return (
     <section id="contact" className="py-16 md:py-20 relative overflow-hidden" style={{ borderTop: "1px solid var(--border)" }}>
-      <div
-        className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full pointer-events-none"
-        style={{ background: "radial-gradient(circle, rgba(37,211,102,0.08) 0%, transparent 70%)", filter: "blur(40px)" }}
-      />
       <div className="max-w-6xl mx-auto px-5 relative">
         <div className="mb-8 text-center">
-          <span className="eyebrow" style={{ color: "var(--accent3)" }}>Let&apos;s Talk</span>
+          <span className="eyebrow">Contact</span>
           <h2 className="section-title">Tell me about your project</h2>
           <p className="text-sm md:text-base leading-relaxed mt-3 mx-auto" style={{ color: "var(--muted)", maxWidth: "520px" }}>
             Free consultation, no obligation. Fill this in and it opens WhatsApp with your details ready to send — or
@@ -60,8 +57,8 @@ export default function Contact() {
         <div className="grid lg:grid-cols-[1.3fr_1fr] gap-6">
           <form
             onSubmit={onSubmit}
-            className="rounded-2xl p-6 md:p-8 flex flex-col gap-4"
-            style={{ background: "var(--card)", border: "1px solid rgba(37,211,102,0.25)" }}
+            className="rounded-xl p-6 md:p-8 flex flex-col gap-4"
+            style={{ background: "var(--card)", border: "1px solid var(--border)" }}
           >
             <div>
               <label htmlFor="c-name" className="text-xs mb-1.5 block" style={{ color: "var(--muted)" }}>Your name</label>
@@ -119,8 +116,8 @@ export default function Contact() {
                 className="card-hover flex items-center gap-4 p-4 rounded-xl"
                 style={{ background: "var(--card)", border: "1px solid var(--border)" }}
               >
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center text-lg flex-shrink-0" style={{ background: "var(--bg3)" }}>
-                  {link.icon}
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "var(--bg3)" }}>
+                  <link.icon size={18} strokeWidth={1.75} style={{ color: "var(--muted)" }} aria-hidden="true" />
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs" style={{ color: "var(--muted)" }}>{link.label}</p>
@@ -128,8 +125,8 @@ export default function Contact() {
                 </div>
               </a>
             ))}
-            <div className="rounded-xl p-4 text-sm" style={{ background: "rgba(62,255,160,0.06)", border: "1px solid rgba(62,255,160,0.2)", color: "var(--accent3)" }}>
-              ✓ I usually reply within a few hours, and always within 24 hours.
+            <div className="rounded-xl p-4 text-sm" style={{ background: "var(--card)", border: "1px solid var(--border)", color: "var(--muted)" }}>
+              I usually reply within a few hours, and always within 24 hours.
             </div>
           </div>
         </div>

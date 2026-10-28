@@ -16,22 +16,22 @@ export default async function Image() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "72px",
-          background: "linear-gradient(135deg, #07070f 0%, #17172a 60%, #2a1f5c 100%)",
-          color: "#eeeef5",
+          background: "#0b0b0d",
+          color: "#ececef",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 14, fontSize: 26, color: "#3effa0" }}>
-          <div style={{ width: 14, height: 14, borderRadius: 7, background: "#3effa0" }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 14, fontSize: 26, color: "#4ade80" }}>
+          <div style={{ width: 14, height: 14, borderRadius: 7, background: "#4ade80" }} />
           Available for new projects
         </div>
-        <div style={{ fontSize: 68, fontWeight: 800, lineHeight: 1.1, marginTop: 28, maxWidth: 1000 }}>
+        <div style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.1, marginTop: 28, maxWidth: 1000 }}>
           I build fast, reliable web apps — from idea to launch.
         </div>
-        <div style={{ fontSize: 30, color: "#a79fff", marginTop: 32 }}>
+        <div style={{ fontSize: 30, color: "#a9c8ff", marginTop: 32 }}>
           Muhammad Faraz · Senior Full-Stack & AI Developer
         </div>
-        <div style={{ display: "flex", gap: 40, fontSize: 26, color: "#7a7a9a", marginTop: 40 }}>
+        <div style={{ display: "flex", gap: 40, fontSize: 26, color: "#8d8d96", marginTop: 40 }}>
           <span>5+ years</span>
           <span>20+ live projects</span>
           <span>US · UK · Canada clients</span>

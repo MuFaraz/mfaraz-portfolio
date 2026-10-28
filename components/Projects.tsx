@@ -3,30 +3,10 @@ import { useState } from "react";
 import { PROJECTS, Project } from "@/data/portfolio";
 import { whatsappLink } from "@/lib/contact";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import ProjectPreview from "@/components/ProjectPreview";
 
 const CATEGORIES = ["All", "Web Apps", "E-Commerce", "Websites & Lead Gen"] as const;
 const INITIAL_COUNT = 6;
-
-const CATEGORY_TINT: Record<Project["category"], string> = {
-  "Web Apps": "rgba(124,107,255,0.28)",
-  "E-Commerce": "rgba(255,107,138,0.22)",
-  "Websites & Lead Gen": "rgba(62,255,160,0.16)",
-};
-
-const INDUSTRY_ICON: Record<string, string> = {
-  "Non-profit": "🌍",
-  Education: "🎓",
-  Healthcare: "🩺",
-  Events: "🎟️",
-  Logistics: "🚚",
-  Legal: "⚖️",
-  SaaS: "🎨",
-  Retail: "🛍️",
-  Automotive: "🚗",
-  "Lead Gen": "📈",
-  "Home Services": "🏠",
-  Technology: "💡",
-};
 
 const displayDomain = (url: string) => new URL(url).hostname.replace(/^www\./, "");
 
@@ -41,13 +21,13 @@ export default function Projects() {
     <section id="work" className="py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-5">
         <div className="mb-8">
-          <span className="eyebrow">Recent Work</span>
+          <span className="eyebrow">Recent work</span>
           <h2 className="section-title">Projects I&apos;ve built</h2>
           <p className="text-sm md:text-base leading-relaxed mt-3" style={{ color: "var(--muted)", maxWidth: "560px" }}>
             Live production platforms I&apos;ve developed or contributed to — from healthcare stores to education
             platforms to US lead-generation sites.
           </p>
-          <p className="text-xs mt-2" style={{ color: "rgba(122,122,154,0.7)", maxWidth: "560px" }}>
+          <p className="text-xs mt-2" style={{ color: "var(--muted)", maxWidth: "560px" }}>
             Many were delivered as part of development teams. All names and brands belong to their respective owners.
           </p>
         </div>
@@ -57,11 +37,11 @@ export default function Projects() {
             <button
               key={cat}
               onClick={() => { setActive(cat); setShowAll(false); }}
-              className="text-sm font-medium px-4 py-2 rounded-lg transition-all duration-200 whitespace-nowrap"
+              className="text-sm font-medium px-3.5 py-1.5 rounded-full transition-colors duration-200 whitespace-nowrap"
               style={{
-                background: active === cat ? "var(--accent)" : "var(--card)",
-                color: active === cat ? "#fff" : "var(--muted)",
-                border: active === cat ? "1px solid var(--accent)" : "1px solid var(--border)",
+                background: active === cat ? "var(--text)" : "transparent",
+                color: active === cat ? "var(--bg)" : "var(--muted)",
+                border: active === cat ? "1px solid var(--text)" : "1px solid var(--border)",
               }}
             >
               {cat}
@@ -84,11 +64,11 @@ export default function Projects() {
         )}
 
         <div
-          className="mt-12 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
-          style={{ background: "linear-gradient(135deg, rgba(124,107,255,0.12), rgba(255,107,138,0.06))", border: "1px solid rgba(124,107,255,0.25)" }}
+          className="mt-12 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-5"
+          style={{ background: "var(--card)", border: "1px solid var(--border)" }}
         >
           <div>
-            <p className="font-bold text-lg md:text-xl" style={{ fontFamily: "Syne, sans-serif" }}>
+            <p className="font-semibold text-lg md:text-xl" style={{ fontFamily: "var(--font-display)" }}>
               Want something like this for your business?
             </p>
             <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>
@@ -117,30 +97,17 @@ export function ProjectCard({ project }: { project: Project }) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="card-hover group rounded-2xl overflow-hidden flex flex-col"
+      className="card-hover group rounded-xl overflow-hidden flex flex-col"
       style={{ background: "var(--card)", border: "1px solid var(--border)" }}
     >
-      <div
-        className="relative h-20 sm:h-28 flex items-center justify-between px-5"
-        style={{ background: `linear-gradient(135deg, ${CATEGORY_TINT[project.category]}, var(--bg3))` }}
-      >
-        <span className="text-4xl transition-transform duration-300 group-hover:scale-110">
-          {INDUSTRY_ICON[project.industry] ?? "💼"}
-        </span>
-        <div className="flex flex-col items-end gap-1.5">
-          <span className="text-[11px] font-medium px-2 py-0.5 rounded-md" style={{ background: "rgba(7,7,15,0.7)", color: "var(--text)" }}>
-            {project.industry}
-          </span>
-          {project.market && (
-            <span className="text-[11px] font-medium px-2 py-0.5 rounded-md" style={{ background: "rgba(7,7,15,0.7)", color: "var(--accent3)" }}>
-              {project.market} market
-            </span>
-          )}
-        </div>
-      </div>
+      <ProjectPreview category={project.category} domain={displayDomain(project.url)} />
 
       <div className="p-4 sm:p-5 flex flex-col gap-2.5 flex-1">
-        <h3 className="font-bold text-base leading-snug" style={{ fontFamily: "Syne, sans-serif" }}>
+        <p className="text-xs" style={{ color: "var(--muted)" }}>
+          {project.industry}
+          {project.market && ` · ${project.market} market`}
+        </p>
+        <h3 className="font-semibold text-base leading-snug -mt-1" style={{ fontFamily: "var(--font-display)" }}>
           {project.title}
         </h3>
         <p className="text-sm leading-relaxed flex-1" style={{ color: "var(--muted)" }}>
@@ -154,7 +121,7 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
         <span className="text-sm font-medium mt-1 transition-colors group-hover:text-[var(--text)]" style={{ color: "var(--accent)" }}>
-          View live site · {displayDomain(project.url)} ↗
+          View live site ↗
         </span>
       </div>
     </a>

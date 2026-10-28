@@ -5,7 +5,7 @@ export default function Process() {
     <section id="process" className="py-16 md:py-20" style={{ borderTop: "1px solid var(--border)", background: "var(--bg2)" }}>
       <div className="max-w-6xl mx-auto px-5">
         <div className="mb-8 text-center">
-          <span className="eyebrow">How It Works</span>
+          <span className="eyebrow">How it works</span>
           <h2 className="section-title">Simple, clear and stress-free</h2>
           <p className="text-sm md:text-base leading-relaxed mt-3 mx-auto" style={{ color: "var(--muted)", maxWidth: "520px" }}>
             You always know what&apos;s happening, what it costs and when it will be ready.
@@ -14,11 +14,11 @@ export default function Process() {
 
         <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {PROCESS.map((p) => (
-            <li key={p.step} className="rounded-2xl p-5 sm:p-6 relative" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
-              <span className="text-3xl sm:text-4xl font-extrabold text-gradient" style={{ fontFamily: "Syne, sans-serif" }}>
+            <li key={p.step} className="rounded-xl p-5 sm:p-6 relative" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
+              <span className="text-sm font-medium tabular-nums" style={{ color: "var(--accent)" }}>
                 {p.step}
               </span>
-              <h3 className="font-bold text-lg mt-2 sm:mt-3 mb-1 sm:mb-2" style={{ fontFamily: "Syne, sans-serif" }}>
+              <h3 className="font-semibold text-lg mt-2 mb-1 sm:mb-2" style={{ fontFamily: "var(--font-display)" }}>
                 {p.title}
               </h3>
               <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>

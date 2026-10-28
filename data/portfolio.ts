@@ -1,3 +1,5 @@
+import type { IconName } from "@/components/Icon";
+
 // ============================================================
 //  FARAZ PORTFOLIO DATA — Edit this file to update your site
 // ============================================================
@@ -39,7 +41,7 @@ export const WHATSAPP_DEFAULT_MESSAGE =
 export const SERVICES = [
   {
     id: "business-website",
-    icon: "🌐",
+    icon: "globe" as IconName,
     title: "Business Website",
     description:
       "A fast, modern website that explains what you do and turns visitors into calls, WhatsApp messages and bookings.",
@@ -48,7 +50,7 @@ export const SERVICES = [
   },
   {
     id: "ecommerce",
-    icon: "🛒",
+    icon: "store" as IconName,
     title: "Online Store / E-Commerce",
     description:
       "Shopify, WooCommerce or fully custom stores with payments, inventory and order management — built to sell.",
@@ -57,7 +59,7 @@ export const SERVICES = [
   },
   {
     id: "web-app",
-    icon: "🏗️",
+    icon: "dashboard" as IconName,
     title: "Custom Web App & SaaS",
     description:
       "Portals, dashboards, booking systems and SaaS products with user roles, admin panels and secure APIs.",
@@ -66,7 +68,7 @@ export const SERVICES = [
   },
   {
     id: "ai-automation",
-    icon: "🤖",
+    icon: "bot" as IconName,
     title: "AI Chatbots & Automation",
     description:
       "AI assistants and automations using Claude & OpenAI that answer customers, qualify leads and save your team hours.",
@@ -75,7 +77,7 @@ export const SERVICES = [
   },
   {
     id: "lead-gen",
-    icon: "📈",
+    icon: "trending" as IconName,
     title: "Lead Generation Platforms",
     description:
       "Landing pages and lead-capture systems with forms, tracking and routing — like the US legal-lead platforms I've built.",
@@ -84,7 +86,7 @@ export const SERVICES = [
   },
   {
     id: "fix-speed",
-    icon: "⚡",
+    icon: "gauge" as IconName,
     title: "Fixes, Speed & SEO",
     description:
       "Slow, broken or outdated site? I fix bugs, speed up load times, clean up legacy code and improve Google rankings.",
@@ -296,22 +298,22 @@ export const PROCESS = [
 // ============================================================
 export const WHY_ME = [
   {
-    icon: "🧑‍💻",
+    icon: "user-check" as IconName,
     title: "Senior-level, not a beginner",
     description: "5+ years building production systems for clients in the US, UK and Canada — currently a Software Developer III leading projects.",
   },
   {
-    icon: "💬",
+    icon: "message" as IconName,
     title: "Clear, fast communication",
     description: "You talk directly to the person writing your code. Regular updates in plain language — no tech jargon.",
   },
   {
-    icon: "🧩",
+    icon: "layers" as IconName,
     title: "One developer, full stack",
     description: "Frontend, backend, database, payments, hosting and AI — no need to hire and coordinate multiple people.",
   },
   {
-    icon: "🤖",
+    icon: "sparkles" as IconName,
     title: "AI-ready from day one",
     description: "Anthropic-certified in Claude, MCP and AI agents, so your product can use AI where it actually saves time and money.",
   },
@@ -415,7 +417,6 @@ export interface Course {
   enrolledDate: string;
   score?: string;
   lessonsProgress?: string;
-  icon: string;
   badge?: string;
   skills: string[];
   featured?: boolean; // shown before "Show all"
@@ -432,7 +433,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Aug-31",
     enrolledDate: "2026-Jul-12",
     badge: "Verified Certificate",
-    icon: "⚡",
     skills: ["MCP Server Specs", "Custom Transports", "Advanced Tooling", "Resource Templates"],
   },
   {
@@ -444,7 +444,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Aug-31",
     enrolledDate: "2026-Jul-12",
     badge: "Verified Certificate",
-    icon: "🔌",
     skills: ["MCP Architecture", "Server/Client Protocol", "Context Integration"],
   },
   {
@@ -456,7 +455,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Aug-30",
     enrolledDate: "2026-Jul-12",
     badge: "Verified Certificate",
-    icon: "🛠️",
     skills: ["Agent Workflows", "Tool Definition", "Custom Capabilities"],
   },
   {
@@ -468,7 +466,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Aug-30",
     enrolledDate: "2026-Jul-12",
     badge: "Verified Certificate",
-    icon: "🤖",
     skills: ["Multi-Agent Systems", "Subagent Delegation", "Autonomous Workflows"],
   },
   {
@@ -481,7 +478,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Jul-12",
     enrolledDate: "2026-Jul-11",
     badge: "Verified Certificate",
-    icon: "🚀",
     skills: ["Automated Engineering", "Terminal Workflows", "Codebase Analysis"],
   },
   {
@@ -493,7 +489,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Jul-11",
     enrolledDate: "2026-Jul-05",
     badge: "Verified Certificate",
-    icon: "🏗️",
     skills: ["Console Management", "API Administration", "Usage & Billing Optimization"],
   },
   {
@@ -505,7 +500,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Jul-11",
     enrolledDate: "2026-Jul-11",
     badge: "Verified Certificate",
-    icon: "🤝",
     skills: ["AI-Human Collaboration", "Workspace Automation", "Team Productivity"],
   },
   {
@@ -517,7 +511,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Jul-04",
     enrolledDate: "2026-Jul-02",
     badge: "Verified Certificate",
-    icon: "💻",
     skills: ["Claude CLI", "AI Pair Programming", "Agent Setup"],
   },
   {
@@ -529,7 +522,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Jul-04",
     enrolledDate: "2026-Jul-01",
     badge: "Verified Certificate",
-    icon: "🧠",
     skills: ["LLM Guardrails", "Evaluation Frameworks", "Capabilities Mapping"],
   },
   {
@@ -542,8 +534,7 @@ export const COURSES: Course[] = [
     completedDate: "2026-Jul-02",
     enrolledDate: "2026-Jul-02",
     score: "10 / 10",
-    badge: "Perfect Score ⭐",
-    icon: "🎯",
+    badge: "Perfect score",
     skills: ["AI Frameworks", "Prompt Engineering", "Foundational Concepts"],
   },
   {
@@ -555,7 +546,6 @@ export const COURSES: Course[] = [
     completedDate: "2026-Jul-02",
     enrolledDate: "2026-Jun-23",
     badge: "Verified Certificate",
-    icon: "✨",
     skills: ["Anthropic Ecosystem", "Model Architectures", "Prompting Fundamentals"],
   },
 ];
@@ -576,7 +566,6 @@ export interface Testimonial {
   id: string;
   name: string; // Fiverr username
   country: string;
-  countryFlag: string;
   source: "Fiverr";
   project: string;
   quote: string; // short version for the card (2–4 lines)
@@ -591,7 +580,6 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "maya_hannah8",
     name: "maya_hannah8",
     country: "United Kingdom",
-    countryFlag: "🇬🇧",
     source: "Fiverr",
     project: "Stripe + Laravel integration · delivered in 1 day",
     quote:
@@ -605,7 +593,6 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "hamisi_shongodo",
     name: "hamisi_shongodo",
     country: "Kenya",
-    countryFlag: "🇰🇪",
     source: "Fiverr",
     project: "New features, bug fixing & system maintenance",
     quote:

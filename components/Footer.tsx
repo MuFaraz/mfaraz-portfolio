@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="pt-10 pb-28 md:pb-10" style={{ borderTop: "1px solid var(--border)" }}>
       <div className="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
         <div>
-          <p className="font-bold" style={{ fontFamily: "Syne, sans-serif" }}>
+          <p className="font-bold" style={{ fontFamily: "var(--font-display)" }}>
             Muhammad <span style={{ color: "var(--accent)" }}>Faraz</span>
           </p>
           <p className="text-xs mt-1" style={{ color: "var(--muted)" }}>
@@ -17,7 +17,7 @@ export default function Footer() {
           <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">LinkedIn</a>
           <a href={PROFILE.githubWork} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">GitHub (Work)</a>
           <a href={PROFILE.githubPersonal} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">GitHub (Personal)</a>
-          <a href={FIVERR.url} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">Fiverr {FIVERR.rating} ★</a>
+          <a href={FIVERR.url} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">Fiverr ({FIVERR.rating})</a>
         </div>
       </div>
       <p className="text-xs text-center mt-8" style={{ color: "rgba(120,120,150,0.5)" }}>

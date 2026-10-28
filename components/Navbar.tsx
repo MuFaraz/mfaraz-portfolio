@@ -26,13 +26,13 @@ export default function Navbar() {
     <nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled || menuOpen ? "rgba(7,7,15,0.92)" : "transparent",
+        background: scrolled || menuOpen ? "rgba(11,11,13,0.92)" : "transparent",
         backdropFilter: scrolled || menuOpen ? "blur(16px)" : "none",
         borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "1px solid transparent",
       }}
     >
       <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-        <a href="#" className="font-bold text-lg" style={{ fontFamily: "Syne, sans-serif" }}>
+        <a href="#" className="font-bold text-lg" style={{ fontFamily: "var(--font-display)" }}>
           Muhammad <span style={{ color: "var(--accent)" }}>Faraz</span>
         </a>
 

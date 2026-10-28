@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Award } from "lucide-react";
 import { COURSES } from "@/data/portfolio";
 
 const INITIAL_COUNT = 3;
@@ -12,18 +13,11 @@ export default function Certifications() {
 
   return (
     <section id="certifications" className="py-16 md:py-20 relative overflow-hidden" style={{ borderTop: "1px solid var(--border)" }}>
-      <div
-        className="absolute top-1/3 right-10 w-96 h-96 rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(217, 119, 87, 0.08) 0%, rgba(124, 107, 255, 0.05) 50%, transparent 70%)",
-          filter: "blur(60px)",
-        }}
-      />
 
       <div className="max-w-6xl mx-auto px-5 relative z-10">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
           <div>
-            <span className="eyebrow" style={{ color: "#d97757" }}>AI Expertise</span>
+            <span className="eyebrow">AI expertise</span>
             <h2 className="section-title">Certified in AI by Anthropic</h2>
             <p className="text-sm md:text-base leading-relaxed mt-3" style={{ color: "var(--muted)", maxWidth: "560px" }}>
               {COURSES.length} certificates from Anthropic Claude Academy — AI agents, MCP and Claude engineering.
@@ -31,12 +25,12 @@ export default function Certifications() {
           </div>
           <div className="flex items-center gap-6 p-4 rounded-xl" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>
             <div>
-              <p className="text-2xl font-extrabold" style={{ color: "var(--accent3)", fontFamily: "Syne, sans-serif" }}>{COURSES.length}</p>
+              <p className="text-2xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>{COURSES.length}</p>
               <p className="text-xs" style={{ color: "var(--muted)" }}>Certificates</p>
             </div>
             <div style={{ width: "1px", height: "30px", background: "var(--border)" }} />
             <div>
-              <p className="text-2xl font-extrabold" style={{ color: "#ffd700", fontFamily: "Syne, sans-serif" }}>10/10</p>
+              <p className="text-2xl font-semibold" style={{ fontFamily: "var(--font-display)" }}>10/10</p>
               <p className="text-xs" style={{ color: "var(--muted)" }}>Top score</p>
             </div>
           </div>
@@ -48,25 +42,20 @@ export default function Certifications() {
               key={course.id}
               className="rounded-xl p-5 flex gap-4"
               style={{
-                background: course.score ? "linear-gradient(145deg, rgba(255, 215, 0, 0.05), var(--card))" : "var(--card)",
-                border: course.score ? "1px solid rgba(255, 215, 0, 0.3)" : "1px solid var(--border)",
+                background: "var(--card)",
+                border: "1px solid var(--border)",
               }}
             >
-              <div
-                className="w-11 h-11 rounded-lg flex items-center justify-center text-xl flex-shrink-0"
-                style={{ background: "var(--bg3)", border: "1px solid var(--border)" }}
-              >
-                {course.icon}
-              </div>
+              <Award size={20} strokeWidth={1.75} className="flex-shrink-0 mt-0.5" style={{ color: "var(--accent-soft)" }} aria-hidden="true" />
               <div className="min-w-0">
-                <h3 className="font-bold text-sm leading-snug" style={{ fontFamily: "Syne, sans-serif" }}>
+                <h3 className="font-semibold text-sm leading-snug" style={{ fontFamily: "var(--font-display)" }}>
                   {course.title}
                 </h3>
                 <p className="text-xs mt-1" style={{ color: "var(--muted)" }}>
                   {course.provider}
-                  {course.score && <span style={{ color: "#ffd700" }}> · Score {course.score} ⭐</span>}
+                  {course.score && <span style={{ color: "var(--text)" }}> · Score {course.score}</span>}
                 </p>
-                <p className="text-xs mt-2" style={{ color: "#a79fff" }}>
+                <p className="text-xs mt-2" style={{ color: "var(--muted)" }}>
                   {course.skills.slice(0, 3).join(" · ")}
                 </p>
               </div>

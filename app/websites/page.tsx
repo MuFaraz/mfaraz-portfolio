@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Check, Clock } from "lucide-react";
 import {
   PROFILE,
   PROJECTS,
@@ -66,7 +67,7 @@ export default function WebsitesLanding() {
   return (
     <main>
       <header className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-        <span className="font-bold text-lg" style={{ fontFamily: "Syne, sans-serif" }}>
+        <span className="font-bold text-lg" style={{ fontFamily: "var(--font-display)" }}>
           Muhammad <span style={{ color: "var(--accent)" }}>Faraz</span>
         </span>
         <a
@@ -83,16 +84,12 @@ export default function WebsitesLanding() {
       </header>
 
       {/* Hero */}
-      <section className="relative grid-bg overflow-hidden">
-        <div
-          className="absolute top-0 left-1/4 w-96 h-96 rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(37,211,102,0.1) 0%, transparent 70%)", filter: "blur(40px)" }}
-        />
+      <section className="relative overflow-hidden">
         <div className="max-w-3xl mx-auto px-5 pt-8 pb-14 md:pt-16 md:pb-20 text-center relative">
-          <span className="eyebrow" style={{ color: "var(--accent3)" }}>For businesses in Karachi &amp; across Pakistan</span>
+          <span className="eyebrow">For businesses in Karachi &amp; across Pakistan</span>
           <h1
-            className="font-extrabold leading-[1.08] mt-4 mb-5"
-            style={{ fontFamily: "Syne, sans-serif", fontSize: "clamp(2.2rem, 6vw, 3.6rem)" }}
+            className="font-bold leading-[1.1] mt-3 mb-5"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.1rem, 5.5vw, 3.3rem)", letterSpacing: "-0.025em" }}
           >
             Your business website, <span className="text-gradient">live in 7 days.</span>
           </h1>
@@ -106,7 +103,7 @@ export default function WebsitesLanding() {
               <li
                 key={b}
                 className="text-xs px-3 py-1 rounded-full"
-                style={{ background: "rgba(124,107,255,0.1)", border: "1px solid rgba(124,107,255,0.2)", color: "#a79fff" }}
+                style={{ border: "1px solid var(--border-strong)", color: "var(--text)" }}
               >
                 {b}
               </li>
@@ -121,11 +118,12 @@ export default function WebsitesLanding() {
           </p>
 
           <div className="flex flex-wrap justify-center items-center gap-x-5 gap-y-2 mt-8 text-sm" style={{ color: "var(--muted)" }}>
-            <FiverrSummary />
+            <FiverrSummary className="justify-center" />
           </div>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 mt-2 text-sm" style={{ color: "var(--muted)" }}>
-            <span>✓ {stat("Years experience")} years experience</span>
-            <span>✓ {stat("Live projects")} live projects</span>
+            <span>{stat("Years experience")} years experience</span>
+            <span>·</span>
+            <span>{stat("Live projects")} live projects</span>
           </div>
         </div>
       </section>
@@ -139,7 +137,7 @@ export default function WebsitesLanding() {
             <p className="text-sm md:text-base mt-3 mx-auto" style={{ color: "var(--muted)", maxWidth: "520px" }}>
               Tell me what you need and I&apos;ll send you a fixed quote before we start.
             </p>
-            <p className="text-sm mt-2 mx-auto" style={{ color: "var(--accent3)", maxWidth: "520px" }}>
+            <p className="text-sm mt-2 mx-auto" style={{ color: "var(--text)", maxWidth: "520px" }}>
               {PACKAGES_PRICE_NOTE}
             </p>
           </div>
@@ -148,22 +146,24 @@ export default function WebsitesLanding() {
             {PACKAGES.map((pkg) => (
               <div
                 key={pkg.id}
-                className="rounded-2xl p-6 flex flex-col gap-4"
+                className="rounded-xl p-6 flex flex-col gap-4"
                 style={{ background: "var(--card)", border: "1px solid var(--border)" }}
               >
                 <div>
-                  <h3 className="font-bold text-xl" style={{ fontFamily: "Syne, sans-serif" }}>{pkg.name}</h3>
+                  <h3 className="font-semibold text-xl" style={{ fontFamily: "var(--font-display)" }}>{pkg.name}</h3>
                   <p className="text-xs mt-1" style={{ color: "var(--muted)" }}>Best for: {pkg.bestFor}</p>
                 </div>
                 <div>
                   <p className="text-xs" style={{ color: "var(--muted)" }}>Starting from</p>
-                  <p className="font-extrabold text-3xl" style={{ fontFamily: "Syne, sans-serif" }}>{formatPKR(pkg.priceFromPKR)}</p>
-                  <p className="text-sm mt-1" style={{ color: "var(--accent3)" }}>⏱ Ready in {pkg.delivery}</p>
+                  <p className="font-semibold text-3xl" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.02em" }}>{formatPKR(pkg.priceFromPKR)}</p>
+                  <p className="text-sm mt-1.5 inline-flex items-center gap-1.5" style={{ color: "var(--muted)" }}>
+                    <Clock size={14} aria-hidden="true" /> Ready in {pkg.delivery}
+                  </p>
                 </div>
                 <ul className="flex flex-col gap-2 text-sm flex-1 pt-4" style={{ borderTop: "1px solid var(--border)" }}>
                   {pkg.features.map((f) => (
                     <li key={f} className="flex gap-2">
-                      <span style={{ color: "var(--accent3)" }}>✓</span>
+                      <Check size={16} className="flex-shrink-0 mt-0.5" style={{ color: "var(--accent3)" }} aria-hidden="true" />
                       {f}
                     </li>
                   ))}
@@ -189,9 +189,9 @@ export default function WebsitesLanding() {
       <section className="py-16 md:py-20" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="max-w-6xl mx-auto px-5">
           <div className="mb-8">
-            <span className="eyebrow">Recent Work</span>
+            <span className="eyebrow">Recent work</span>
             <h2 className="section-title">Real websites I&apos;ve built</h2>
-            <p className="text-xs mt-2" style={{ color: "rgba(122,122,154,0.7)" }}>
+            <p className="text-xs mt-2" style={{ color: "var(--muted)" }}>
               Some were delivered as part of development teams. All names and brands belong to their owners.
             </p>
           </div>
