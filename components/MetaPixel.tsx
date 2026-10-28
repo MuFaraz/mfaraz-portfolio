@@ -4,7 +4,7 @@ import Script from "next/script";
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
 export default function MetaPixel() {
-  if (!PIXEL_ID) return null;
+  if (!PIXEL_ID || !/^\d+$/.test(PIXEL_ID)) return null;
 
   return (
     <>

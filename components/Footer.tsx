@@ -1,4 +1,4 @@
-import { PROFILE } from "@/data/portfolio";
+import { PROFILE, FIVERR } from "@/data/portfolio";
 
 export default function Footer() {
   return (
@@ -12,10 +12,12 @@ export default function Footer() {
             {PROFILE.title} · {PROFILE.location} · Working with clients worldwide
           </p>
         </div>
-        <div className="flex flex-wrap justify-center gap-5 text-sm" style={{ color: "var(--muted)" }}>
-          <a href={`mailto:${PROFILE.email}`} className="hover:text-[var(--text)]">Email</a>
+        <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm" style={{ color: "var(--muted)" }}>
+          <a href={`mailto:${PROFILE.email}`} data-track="footer" className="hover:text-[var(--text)]">Email</a>
           <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">LinkedIn</a>
-          <a href={PROFILE.githubWork} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">GitHub</a>
+          <a href={PROFILE.githubWork} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">GitHub (Work)</a>
+          <a href={PROFILE.githubPersonal} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">GitHub (Personal)</a>
+          <a href={FIVERR.url} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--text)]">Fiverr {FIVERR.rating} ★</a>
         </div>
       </div>
       <p className="text-xs text-center mt-8" style={{ color: "rgba(120,120,150,0.5)" }}>

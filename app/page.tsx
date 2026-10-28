@@ -13,7 +13,9 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import StickyContact from "@/components/StickyContact";
 
-// Ordered for visitors arriving from ads: offer → proof → what I do → how → trust → objections → contact
+// Sent with job applications and to clients, so it's ordered for a ~60s scan:
+// who → work → proof → track record → what I offer → how → trust → objections → contact.
+// Paid ad traffic goes to /websites instead.
 export default function Home() {
   return (
     <main>
@@ -21,12 +23,12 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <Projects />
-      <Services />
-      <Process />
-      <WhyMe />
       <Testimonials />
       <Experience />
+      <Services />
       <Certifications />
+      <Process />
+      <WhyMe />
       <FAQ />
       <Contact />
       <Footer />

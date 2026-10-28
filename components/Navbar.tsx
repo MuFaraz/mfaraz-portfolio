@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
-import { whatsappLink, trackLead } from "@/lib/contact";
+import { whatsappLink } from "@/lib/contact";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const links = [
   { href: "#work", label: "Work" },
-  { href: "#services", label: "Services" },
-  { href: "#process", label: "Process" },
+  { href: "#testimonials", label: "Reviews" },
   { href: "#experience", label: "Experience" },
+  { href: "#services", label: "Services" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
@@ -51,7 +51,7 @@ export default function Navbar() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackLead("navbar")}
+            data-track="navbar"
             className="btn btn-whatsapp hidden sm:inline-flex"
             style={{ padding: "0.55rem 1rem", fontSize: "0.85rem" }}
           >
@@ -83,7 +83,7 @@ export default function Navbar() {
             href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackLead("mobile-menu")}
+            data-track="mobile-menu"
             className="btn btn-whatsapp mt-3"
           >
             <WhatsAppIcon />

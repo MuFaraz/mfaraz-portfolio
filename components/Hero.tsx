@@ -1,7 +1,8 @@
-"use client";
-import { PROFILE, SERVICES } from "@/data/portfolio";
-import { whatsappLink, trackLead } from "@/lib/contact";
+import { PROFILE, SERVICES, TESTIMONIALS, FIVERR } from "@/data/portfolio";
+import { whatsappLink } from "@/lib/contact";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+
+const highlight = TESTIMONIALS.find((t) => t.highlight);
 
 export default function Hero() {
   return (
@@ -15,50 +16,97 @@ export default function Hero() {
         style={{ background: "radial-gradient(circle, rgba(255,107,138,0.08) 0%, transparent 70%)", filter: "blur(40px)" }}
       />
 
-      <div className="max-w-6xl mx-auto px-5 w-full py-14 md:py-24 relative">
+      <div className="max-w-6xl mx-auto px-5 w-full pt-8 pb-12 md:py-20 relative">
         <div className="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
           {/* Left — the offer */}
           <div>
-            {PROFILE.availableForWork && (
-              <div
-                className="inline-flex items-center gap-2 text-xs font-medium px-4 py-2 rounded-full mb-6"
-                style={{ background: "rgba(62,255,160,0.08)", border: "1px solid rgba(62,255,160,0.2)", color: "var(--accent3)" }}
-              >
-                <span className="w-2 h-2 rounded-full inline-block" style={{ background: "var(--accent3)", animation: "pulse-dot 2s infinite" }} />
-                Available for new projects
-              </div>
-            )}
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-5">
+              <p className="text-sm md:text-base">
+                <span className="font-bold" style={{ fontFamily: "Syne, sans-serif" }}>{PROFILE.name}</span>
+                <span style={{ color: "var(--muted)" }}> · {PROFILE.title} · {PROFILE.location}</span>
+              </p>
+              {PROFILE.availableForWork && (
+                <span
+                  className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1 rounded-full"
+                  style={{ background: "rgba(62,255,160,0.08)", border: "1px solid rgba(62,255,160,0.2)", color: "var(--accent3)" }}
+                >
+                  <span className="w-2 h-2 rounded-full inline-block" style={{ background: "var(--accent3)", animation: "pulse-dot 2s infinite" }} />
+                  Available
+                </span>
+              )}
+            </div>
 
             <h1
-              className="font-extrabold leading-[1.08] mb-5"
-              style={{ fontFamily: "Syne, sans-serif", fontSize: "clamp(2.2rem, 5.5vw, 3.7rem)" }}
+              className="font-extrabold leading-[1.08] mb-4"
+              style={{ fontFamily: "Syne, sans-serif", fontSize: "clamp(2rem, 5vw, 3.1rem)" }}
             >
-              I build websites & web apps that{" "}
-              <span className="text-gradient">bring you customers.</span>
+              I build fast, reliable web apps —{" "}
+              <span className="text-gradient">from idea to launch.</span>
             </h1>
 
-            <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "var(--muted)", maxWidth: "540px" }}>
+            <p className="text-base md:text-lg leading-relaxed mb-3" style={{ color: "var(--muted)", maxWidth: "540px" }}>
               {PROFILE.subheadline}
             </p>
+            <p className="text-sm mb-6" style={{ color: "#a79fff", maxWidth: "540px" }}>
+              {PROFILE.tagline}
+            </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+            <div className="grid grid-cols-2 sm:flex gap-3 mb-5">
               <a
                 href={whatsappLink()}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackLead("hero")}
-                className="btn btn-whatsapp"
-                style={{ padding: "1rem 1.6rem", fontSize: "1rem" }}
+                data-track="hero"
+                className="btn btn-whatsapp hero-btn"
               >
                 <WhatsAppIcon size={20} />
-                Get a Free Quote on WhatsApp
+                <span className="sm:hidden">Free Quote</span>
+                <span className="hidden sm:inline">Get a Free Quote on WhatsApp</span>
               </a>
-              <a href="#work" className="btn btn-ghost" style={{ padding: "1rem 1.6rem", fontSize: "1rem" }}>
+              <a href="#work" className="btn btn-ghost hero-btn">
                 See My Work ↓
               </a>
             </div>
 
-            <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm" style={{ color: "var(--muted)" }}>
+            <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm mb-6" aria-label="Profiles">
+              {[
+                { label: "LinkedIn", href: PROFILE.linkedin },
+                { label: "GitHub (Work)", href: PROFILE.githubWork },
+                { label: "GitHub (Personal)", href: PROFILE.githubPersonal },
+                { label: "Email", href: `mailto:${PROFILE.email}` },
+              ].map((l) => (
+                <li key={l.label}>
+                  <a
+                    href={l.href}
+                    target={l.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    data-track="hero-links"
+                    className="underline-offset-4 hover:underline hover:text-[var(--text)]"
+                    style={{ color: "var(--muted)" }}
+                  >
+                    {l.label} ↗
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {highlight?.highlight && (
+              <a
+                href="#testimonials"
+                className="block rounded-xl px-4 py-3 mb-2 max-w-[540px] transition-colors hover:border-[rgba(255,215,0,0.35)]"
+                style={{ background: "var(--card)", border: "1px solid var(--border)" }}
+              >
+                <p className="text-sm leading-snug">
+                  <span style={{ color: "#ffd700" }}>★★★★★</span> &ldquo;{highlight.highlight}&rdquo;
+                </p>
+                <p className="text-xs mt-1.5" style={{ color: "var(--muted)" }}>
+                  — {highlight.name}, {highlight.countryFlag} {highlight.country} · {FIVERR.rating} ★ on Fiverr ·{" "}
+                  <span style={{ color: "var(--accent)" }}>Read reviews ↓</span>
+                </p>
+              </a>
+            )}
+
+            <ul className="hidden sm:flex flex-wrap gap-x-5 gap-y-2 text-sm mt-5" style={{ color: "var(--muted)" }}>
               {PROFILE.guarantees.map((g) => (
                 <li key={g} className="flex items-center gap-1.5">
                   <span style={{ color: "var(--accent3)" }}>✓</span> {g}
@@ -67,7 +115,7 @@ export default function Hero() {
             </ul>
 
             <div
-              className="grid grid-cols-4 gap-2 mt-10 pt-6 max-w-[540px]"
+              className="grid grid-cols-4 gap-2 mt-6 pt-5 max-w-[540px]"
               style={{ borderTop: "1px solid var(--border)" }}
             >
               {PROFILE.stats.map((s) => (

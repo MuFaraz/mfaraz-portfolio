@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { PROJECTS, Project } from "@/data/portfolio";
-import { whatsappLink, trackLead } from "@/lib/contact";
+import { whatsappLink } from "@/lib/contact";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const CATEGORIES = ["All", "Web Apps", "E-Commerce", "Websites & Lead Gen"] as const;
@@ -38,7 +38,7 @@ export default function Projects() {
   const visible = showAll ? filtered : filtered.slice(0, INITIAL_COUNT);
 
   return (
-    <section id="work" className="py-20 md:py-24">
+    <section id="work" className="py-16 md:py-20">
       <div className="max-w-6xl mx-auto px-5">
         <div className="mb-8">
           <span className="eyebrow">Recent Work</span>
@@ -69,7 +69,7 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {visible.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
@@ -99,7 +99,7 @@ export default function Projects() {
             href={whatsappLink("Hi Faraz, I saw your projects and want something similar for my business.")}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackLead("projects-cta")}
+            data-track="projects-cta"
             className="btn btn-whatsapp w-full md:w-auto"
           >
             <WhatsAppIcon />
@@ -111,7 +111,7 @@ export default function Projects() {
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project }: { project: Project }) {
   return (
     <a
       href={project.url}
@@ -121,7 +121,7 @@ function ProjectCard({ project }: { project: Project }) {
       style={{ background: "var(--card)", border: "1px solid var(--border)" }}
     >
       <div
-        className="relative h-28 flex items-center justify-between px-5"
+        className="relative h-20 sm:h-28 flex items-center justify-between px-5"
         style={{ background: `linear-gradient(135deg, ${CATEGORY_TINT[project.category]}, var(--bg3))` }}
       >
         <span className="text-4xl transition-transform duration-300 group-hover:scale-110">
@@ -139,7 +139,7 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="p-5 flex flex-col gap-2.5 flex-1">
+      <div className="p-4 sm:p-5 flex flex-col gap-2.5 flex-1">
         <h3 className="font-bold text-base leading-snug" style={{ fontFamily: "Syne, sans-serif" }}>
           {project.title}
         </h3>

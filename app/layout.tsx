@@ -1,12 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import MetaPixel from "@/components/MetaPixel";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import ContactTracking from "@/components/ContactTracking";
 import "./globals.css";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mfaraz.vercel.app";
 
-const title = "Muhammad Faraz – Website & Web App Developer | Next.js · Laravel · Shopify · AI";
+const title = "Muhammad Faraz – Senior Full-Stack & AI Developer | Next.js · NestJS · Laravel · Shopify";
 const description =
-  "Need a website, online store or custom web app? Senior full-stack developer with 5+ years and 20+ live projects for businesses in the US, UK & Canada. Free consultation — reply within 24 hours.";
+  "Senior full-stack & AI developer in Karachi with 5+ years and 20+ live projects for clients in the US, UK & Canada. Next.js, NestJS, Laravel, Shopify and Claude/OpenAI integrations. Rated 5.0 on Fiverr.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Muhammad Faraz" }],
   icons: { icon: "/icon.png" },
   openGraph: {
-    title: "Muhammad Faraz – I build websites & web apps that bring you customers",
+    title: "Muhammad Faraz – Senior Full-Stack & AI Developer",
     description,
     type: "website",
     url: "/",
@@ -34,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Faraz – Website & Web App Developer",
+    title: "Muhammad Faraz – Senior Full-Stack & AI Developer",
     description,
   },
 };
@@ -48,7 +50,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
         {children}
+        <ContactTracking />
         <MetaPixel />
+        <GoogleAnalytics />
       </body>
     </html>
   );

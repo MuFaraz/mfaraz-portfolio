@@ -1,16 +1,16 @@
 import { FAQS } from "@/data/portfolio";
 
-export default function FAQ() {
+export default function FAQ({ items = FAQS, title = "Frequently asked questions" }: { items?: { q: string; a: string }[]; title?: string }) {
   return (
-    <section id="faq" className="py-20 md:py-24" style={{ borderTop: "1px solid var(--border)" }}>
+    <section id="faq" className="py-16 md:py-20" style={{ borderTop: "1px solid var(--border)" }}>
       <div className="max-w-3xl mx-auto px-5">
-        <div className="mb-10 text-center">
+        <div className="mb-8 text-center">
           <span className="eyebrow">Questions</span>
-          <h2 className="section-title">Frequently asked questions</h2>
+          <h2 className="section-title">{title}</h2>
         </div>
 
         <div className="flex flex-col gap-3">
-          {FAQS.map((f, i) => (
+          {items.map((f, i) => (
             <details
               key={f.q}
               open={i === 0}

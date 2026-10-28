@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Preview image shown when the site link is shared on Facebook, WhatsApp, LinkedIn, etc.
-export const alt = "Muhammad Faraz – Website & Web App Developer";
+export const alt = "Muhammad Faraz – Senior Full-Stack & AI Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ export default async function Image() {
           Available for new projects
         </div>
         <div style={{ fontSize: 68, fontWeight: 800, lineHeight: 1.1, marginTop: 28, maxWidth: 1000 }}>
-          I build websites & web apps that bring you customers.
+          I build fast, reliable web apps — from idea to launch.
         </div>
         <div style={{ fontSize: 30, color: "#a79fff", marginTop: 32 }}>
           Muhammad Faraz · Senior Full-Stack & AI Developer

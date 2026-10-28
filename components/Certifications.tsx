@@ -2,14 +2,16 @@
 import { useState } from "react";
 import { COURSES } from "@/data/portfolio";
 
-const INITIAL_COUNT = 6;
+const INITIAL_COUNT = 3;
+// Featured certificates first, then the rest in their original order
+const ORDERED = [...COURSES.filter((c) => c.featured), ...COURSES.filter((c) => !c.featured)];
 
 export default function Certifications() {
   const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? COURSES : COURSES.slice(0, INITIAL_COUNT);
+  const visible = showAll ? ORDERED : ORDERED.slice(0, INITIAL_COUNT);
 
   return (
-    <section id="certifications" className="py-20 md:py-24 relative overflow-hidden" style={{ borderTop: "1px solid var(--border)" }}>
+    <section id="certifications" className="py-16 md:py-20 relative overflow-hidden" style={{ borderTop: "1px solid var(--border)" }}>
       <div
         className="absolute top-1/3 right-10 w-96 h-96 rounded-full pointer-events-none"
         style={{
@@ -19,13 +21,12 @@ export default function Certifications() {
       />
 
       <div className="max-w-6xl mx-auto px-5 relative z-10">
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
           <div>
             <span className="eyebrow" style={{ color: "#d97757" }}>AI Expertise</span>
             <h2 className="section-title">Certified in AI by Anthropic</h2>
             <p className="text-sm md:text-base leading-relaxed mt-3" style={{ color: "var(--muted)", maxWidth: "560px" }}>
-              {COURSES.length} certifications from Anthropic Claude Academy — covering AI agents, Model Context Protocol
-              (MCP) and Claude engineering. This is how I add practical AI to the products I build.
+              {COURSES.length} certificates from Anthropic Claude Academy — AI agents, MCP and Claude engineering.
             </p>
           </div>
           <div className="flex items-center gap-6 p-4 rounded-xl" style={{ background: "var(--card)", border: "1px solid var(--border)" }}>

@@ -5,10 +5,10 @@
 export const PROFILE = {
   name: "Muhammad Faraz",
   title: "Senior Full-Stack & AI Developer",
-  // Hero copy — written for business owners arriving from ads, not recruiters
-  headline: "I build websites & web apps that bring you customers.",
+  // Hero copy — the homepage is read by recruiters and clients; ad traffic goes to /websites
+  headline: "I build fast, reliable web apps — from idea to launch.",
   subheadline:
-    "Senior full-stack developer with 5+ years and 20+ live projects for businesses in the US, UK & Canada. Business websites, online stores, custom web apps and AI automation — built properly, delivered on time.",
+    "5+ years and 20+ live projects for clients in the US, UK & Canada. Currently Software Developer III at Genetech Solutions, leading Next.js & NestJS projects.",
   tagline: "Next.js · React · NestJS · Laravel · WordPress · Shopify · AI Integrations",
   location: "Karachi, Pakistan",
   email: "muhammadfaraz991@gmail.com",
@@ -17,6 +17,7 @@ export const PROFILE = {
   linkedin: "https://www.linkedin.com/in/muhammad-faraz-644135199/",
   githubWork: "https://github.com/mfarazgt",
   githubPersonal: "https://github.com/MuFaraz",
+  fiverr: "https://www.fiverr.com/muhammadfaraz99",
   availableForWork: true,
   countries: ["United States", "United Kingdom", "Canada", "Pakistan"],
   guarantees: ["Free consultation", "Reply within 24 hours", "Work directly with the developer"],
@@ -417,11 +418,13 @@ export interface Course {
   icon: string;
   badge?: string;
   skills: string[];
+  featured?: boolean; // shown before "Show all"
 }
 
 export const COURSES: Course[] = [
   {
     id: "mcp-advanced",
+    featured: true,
     title: "Model Context Protocol: Advanced Topics",
     provider: "Anthropic Claude Academy",
     category: "Agentic AI & MCP",
@@ -470,6 +473,7 @@ export const COURSES: Course[] = [
   },
   {
     id: "claude-code-action",
+    featured: true,
     title: "Claude Code in Action",
     provider: "Anthropic Claude Academy",
     category: "Claude Engineering",
@@ -530,6 +534,7 @@ export const COURSES: Course[] = [
   },
   {
     id: "ai-fluency",
+    featured: true,
     title: "AI Fluency: Framework & Foundations",
     provider: "Anthropic Claude Academy",
     category: "AI Foundations",
@@ -556,16 +561,134 @@ export const COURSES: Course[] = [
 ];
 
 // ============================================================
-//  TESTIMONIALS — Add REAL client reviews here; the section appears automatically.
-//  Ask past clients for 2–3 lines + permission to use their name.
+//  TESTIMONIALS — Real Fiverr reviews only. Card quotes are trimmed with "…";
+//  the full original text lives in `fullReviews`.
 // ============================================================
+export const FIVERR = {
+  url: PROFILE.fiverr,
+  rating: "5.0",
+  // maya_hannah8 (1) + hamisi_shongodo (3) + hureax (3 short reviews, not shown as cards)
+  reviewCount: 7,
+  clientCountries: ["UK", "Kenya", "Italy"],
+};
+
 export interface Testimonial {
-  quote: string;
-  name: string;
-  role: string; // e.g. "Founder, EdEx Online"
+  id: string;
+  name: string; // Fiverr username
+  country: string;
+  countryFlag: string;
+  source: "Fiverr";
+  project: string;
+  quote: string; // short version for the card (2–4 lines)
+  highlight?: string; // one-liner used in the hero
+  isRepeatClient?: boolean;
+  projectsCount?: number;
+  fullReviews: string[];
 }
 
 export const TESTIMONIALS: Testimonial[] = [
-  // { quote: "Faraz delivered ...", name: "Jane Doe", role: "Founder, Company" },
+  {
+    id: "maya_hannah8",
+    name: "maya_hannah8",
+    country: "United Kingdom",
+    countryFlag: "🇬🇧",
+    source: "Fiverr",
+    project: "Stripe + Laravel integration · delivered in 1 day",
+    quote:
+      "He doesn't just do what you ask — he thinks ahead, solves problems, and delivers a complete solution. … Code was clean, ready-to-use, and well documented. … I'll 100% be working with him again.",
+    highlight: "He doesn't just do what you ask — he thinks ahead, solves problems, and delivers a complete solution.",
+    fullReviews: [
+      "I'm honestly blown away by the quality of work and professionalism. I shared a simple requirement — Stripe integration with Laravel — and he not only understood it immediately but also delivered the complete working project faster than expected. He doesn't just do what you ask — he thinks ahead, solves problems, and delivers a complete solution. From the payment button, test product setup, to confirmation email — everything was done perfectly, cleanly coded, and well organized. Understood my needs without endless explanations. Delivered super fast. Code was clean, ready-to-use, and well documented. Excellent communication and attitude. Price was super reasonable for the quality delivered. If you're looking for someone who is honest, skilled, fast, and truly cares about your project, don't waste your time elsewhere. This is the developer you need. I'll 100% be working with him again. Highly, highly recommended!",
+    ],
+  },
+  {
+    id: "hamisi_shongodo",
+    name: "hamisi_shongodo",
+    country: "Kenya",
+    countryFlag: "🇰🇪",
+    source: "Fiverr",
+    project: "New features, bug fixing & system maintenance",
+    quote:
+      "…he is one of the most skilled and dependable programmers I've ever hired. … He's proactive, often identifying and fixing issues before I even notice them. Deadlines are always met (often ahead of time).",
+    isRepeatClient: true,
+    projectsCount: 3,
+    fullReviews: [
+      "I have been working with Muhammad Faraz for several projects over the past months, and I can confidently say he is one of the most skilled and dependable programmers I've ever hired. From writing clean, efficient code to fixing complex errors across various projects, he consistently delivers beyond expectations. He has a deep understanding of backend and frontend technologies, and he approaches every task—big or small—with professionalism and attention to detail. What truly sets him apart is his communication. He listens carefully to requirements, asks the right questions, and provides regular updates, which makes collaboration smooth and stress-free. He's proactive, often identifying and fixing issues before I even notice them. Deadlines are always met (often ahead of time), and his feedback turnaround is impressively fast. Whether it's building new features, optimizing performance, or debugging existing issues, he handles everything with expertise and a calm, solution-oriented attitude. If you're looking for a trustworthy programmer who values quality and reliability, I highly recommend Muhammad Faraz. I'm grateful for his contributions and look forward to working with him again!",
+      "Muhammad Faraz is an exceptional software developer with a rare combination of technical expertise and excellent interpersonal skills. This is my second time working with him. His coding proficiency is evident in the clean, well-structured, and maintainable source code he has consistently delivered to me. Faraz demonstrates a deep understanding of tasks, often grasping requirements quickly and suggesting improvements where necessary. One of his standout qualities is his reliability—he not only meets deadlines but often delivers well ahead of schedule, without compromising quality. His communication skills are top-notch; he keeps me updated with clear, concise progress reports and provides prompt feedback when questions arise. Beyond his technical and professional strengths, Faraz is polite, collaborative, and a pleasure to work with. Order from him and see what he is capable of. He will never disappoint.",
+      "Muhammad Faraz truly impressed me with his remarkable professionalism and code expertise in system maintenance. His delivery exceeded expectations while showcasing deep understanding and a cooperative spirit. He also breaks down all your problems into brief and deep points more than what you thought. He delivers even before the deadline. I appreciate his swift efficiency and excellent collaboration! Looking forward to working with him in the next work. I really recommend everyone to hire him.",
+    ],
+  },
+];
+
+// ============================================================
+//  /websites LANDING PAGE — for ad traffic (Pakistani small businesses)
+//  Change prices here; the page and its share image update automatically.
+// ============================================================
+export interface WebsitePackage {
+  id: string;
+  name: string;
+  priceFromPKR: number;
+  delivery: string;
+  bestFor: string;
+  features: string[];
+}
+
+export const PACKAGES: WebsitePackage[] = [
+  {
+    id: "business-website",
+    name: "Business Website",
+    priceFromPKR: 30000,
+    delivery: "7 days",
+    bestFor: "Clinics, salons, restaurants, real estate",
+    features: ["5 pages", "Mobile friendly", "WhatsApp chat button", "Google Maps location"],
+  },
+  {
+    id: "online-store",
+    name: "Online Store",
+    priceFromPKR: 70000,
+    delivery: "10–14 days",
+    bestFor: "Shops and brands selling products",
+    features: ["Shopify or WooCommerce", "Cash on Delivery (COD) setup", "Up to 50 products uploaded"],
+  },
+  {
+    id: "website-ai-chatbot",
+    name: "Website + AI Chatbot",
+    priceFromPKR: 120000,
+    delivery: "14–21 days",
+    bestFor: "Businesses that get many customer questions",
+    features: ["Complete business website", "AI assistant that answers customers 24/7"],
+  },
+];
+
+export const formatPKR = (amount: number) => `PKR ${amount.toLocaleString("en-US")}`;
+
+// Shown under the packages — prices are a guide, not a fixed limit
+export const PACKAGES_PRICE_NOTE =
+  "Prices are a starting point, not a fixed limit. Depending on your requirements, it can cost even less.";
+
+export const LANDING_WHATSAPP_MESSAGE = "Hi Faraz, I saw your ad and I'd like a website for my business.";
+export const packageWhatsAppMessage = (pkg: WebsitePackage) =>
+  `Hi Faraz, I saw your ad and I'm interested in the ${pkg.name} package.`;
+
+// Best proof for local business owners (ids from PROJECTS)
+export const LANDING_PROJECT_IDS = ["nutriwest", "organicformula", "legal-help"];
+
+export const LANDING_FAQS = [
+  {
+    q: "How much does a website cost?",
+    a: `A business website starts from ${formatPKR(PACKAGES[0].priceFromPKR)}. The final price depends on your requirements — it can even be less for a simple site. You get a clear, fixed quote on WhatsApp before any work starts.`,
+  },
+  {
+    q: "How long will it take?",
+    a: "Business website: 7 days. Online store: 10–14 days. Website + AI chatbot: 14–21 days. Time starts once you share your logo, photos and business details.",
+  },
+  {
+    q: "Can I edit the website myself?",
+    a: "Yes. I set up an easy admin panel and show you how to change text, photos, prices and products yourself. No coding needed.",
+  },
+  {
+    q: "What happens after launch?",
+    a: "I stay available for fixes and small changes. If you want, monthly maintenance can also be arranged so I look after the site for you.",
+  },
 ];
 
