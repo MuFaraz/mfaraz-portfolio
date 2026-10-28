@@ -8,7 +8,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mfaraz.vercel.app"
 
 const title = "Muhammad Faraz – Senior Full-Stack & AI Developer | Next.js · NestJS · Laravel · Shopify";
 const description =
-  "Senior full-stack & AI developer in Karachi with 5+ years and 20+ live projects for clients in the US, UK & Canada. Next.js, NestJS, Laravel, Shopify and Claude/OpenAI integrations. Rated 5.0 on Fiverr.";
+  "Senior full-stack & AI developer in Karachi with 6+ years and 20+ live projects for clients in the US, UK & Canada. Next.js, NestJS, Laravel, Shopify and Claude/OpenAI integrations. Rated 5.0 on Fiverr.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

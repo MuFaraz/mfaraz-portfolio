@@ -12,12 +12,26 @@ const stat = (label: string) => PROFILE.stats.find((s) => s.label === label)?.va
 const FACTS = [
   { label: "Currently", value: `${current.role}, ${current.company}` },
   { label: "Experience", value: `${stat("Years experience")} years · ${stat("Live projects")} live projects` },
-  { label: "Clients in", value: "United States, United Kingdom, Canada" },
-  { label: "Fiverr", value: `${FIVERR.rating} rating · ${FIVERR.reviewCount} reviews` },
   { label: "Certified", value: `${COURSES.length} Anthropic Claude Academy certificates` },
 ];
 
-const STACK = ["Next.js", "React", "NestJS", "Laravel", "WordPress", "Shopify", "Claude / OpenAI"];
+const STACK = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Node.js",
+  "NestJS",
+  "Laravel / PHP",
+  "Shopify",
+  "WordPress",
+  "WooCommerce",
+  "Stripe / PayPal",
+  "REST APIs",
+  "PostgreSQL / MySQL",
+  "Redis / RabbitMQ",
+  "Tailwind CSS",
+  "Claude / OpenAI",
+];
 
 export default function Hero() {
   return (

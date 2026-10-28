@@ -32,7 +32,7 @@ export default async function Image() {
           Muhammad Faraz · Senior Full-Stack & AI Developer
         </div>
         <div style={{ display: "flex", gap: 40, fontSize: 26, color: "#8d8d96", marginTop: 40 }}>
-          <span>5+ years</span>
+          <span>6+ years</span>
           <span>20+ live projects</span>
           <span>US · UK · Canada clients</span>
         </div>

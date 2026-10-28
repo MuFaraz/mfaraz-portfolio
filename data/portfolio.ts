@@ -10,7 +10,7 @@ export const PROFILE = {
   // Hero copy — the homepage is read by recruiters and clients; ad traffic goes to /websites
   headline: "I build fast, reliable web apps — from idea to launch.",
   subheadline:
-    "5+ years and 20+ live projects for clients in the US, UK & Canada. Currently Software Developer III at Genetech Solutions, leading Next.js & NestJS projects.",
+    "6+ years and 20+ live projects for businesses around the world, from startups to established brands. I build fast, reliable websites, web apps and AI tools, with clear communication and on-time delivery.",
   tagline: "Next.js · React · NestJS · Laravel · WordPress · Shopify · AI Integrations",
   location: "Karachi, Pakistan",
   email: "muhammadfaraz991@gmail.com",
@@ -24,7 +24,7 @@ export const PROFILE = {
   countries: ["United States", "United Kingdom", "Canada", "Pakistan"],
   guarantees: ["Free consultation", "Reply within 24 hours", "Work directly with the developer"],
   stats: [
-    { value: "5+", label: "Years experience" },
+    { value: "6+", label: "Years experience" },
     { value: "20+", label: "Live projects" },
     { value: "3", label: "Countries served" },
     { value: "11", label: "AI certifications" },
@@ -300,7 +300,7 @@ export const WHY_ME = [
   {
     icon: "user-check" as IconName,
     title: "Senior-level, not a beginner",
-    description: "5+ years building production systems for clients in the US, UK and Canada — currently a Software Developer III leading projects.",
+    description: "6+ years building production systems for businesses worldwide. I currently lead projects end-to-end, from planning and architecture to launch.",
   },
   {
     icon: "message" as IconName,
