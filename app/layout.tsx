@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import MetaPixel from "@/components/MetaPixel";
 import "./globals.css";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mfaraz.vercel.app";
 
 const title = "Muhammad Faraz – Website & Web App Developer | Next.js · Laravel · Shopify · AI";
 const description =
